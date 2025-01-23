@@ -2,9 +2,11 @@ extends CharacterBody2D
 
 
 @export var speed = 100
+@export var damage = randi_range(10, 20)
 
 
 var player_position
+var experience_point = randi_range(5, 15)
 
 
 func _ready():
