@@ -1,3 +1,11 @@
 res://default_env.tres
+res://experience_player.gd
+res://Experience_player.tscn
+res://Player.tscn
+res://Enemy.tscn
+res://Bullet.gd
 res://Main.tscn
+res://Bullet.tscn
+res://Player.gd
 res://Enemy.gd
+res://Experience_player.gd
