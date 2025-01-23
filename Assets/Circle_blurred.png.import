@@ -3,15 +3,15 @@
 importer="texture"
 type="CompressedTexture2D"
 uid="uid://cj6b85okf1l0p"
-path="res://.godot/imported/Circle_blurred.png-29ab6910ab85ec3b58f75f8089c7cf05.ctex"
+path="res://.godot/imported/Circle_blurred.png-2a06b51873dbe70fb0dfd6d1bd4e0d7d.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/Circle_blurred.png"
-dest_files=["res://.godot/imported/Circle_blurred.png-29ab6910ab85ec3b58f75f8089c7cf05.ctex"]
+source_file="res://Assets/Circle_blurred.png"
+dest_files=["res://.godot/imported/Circle_blurred.png-2a06b51873dbe70fb0dfd6d1bd4e0d7d.ctex"]
 
 [params]
 

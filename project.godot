@@ -10,10 +10,14 @@ config_version=5
 
 [application]
 
-config/name="10 LOC Survivors"
-run/main_scene="res://levels/main_level/main_level.tscn"
+config/name="Belzebubble"
+run/main_scene="res://levels/main_menu/main_menu.tscn"
 config/features=PackedStringArray("4.3")
 config/icon="res://icon.png"
+
+[autoload]
+
+TransitionScreen="*res://common/transition/transition_screen.tscn"
 
 [display]
 

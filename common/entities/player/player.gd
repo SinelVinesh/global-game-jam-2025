@@ -49,7 +49,7 @@ func _physics_process(delta):
 
 
 #Shoot bullet automatically
-func shoot(): add_child(load("res://common/entities/bullet/bullet.tscn").instantiate())
+#func shoot(): add_child(load("res://common/entities/bullet/bullet.tscn").instantiate())
 
 
 #Spawn ennemies automatically
