@@ -12,7 +12,7 @@ var current_i_frames := 0
 #Call when node enters main scene
 func _ready() -> void:
 	health = max_health
-	$Camera2D/Control_Player/ProgressBar_Health.value = health
+	%PlayerCamera/Control_Player/ProgressBar_Health.value = health
 
 
 #Called in real time
@@ -83,4 +83,4 @@ func handleDamage() -> void :
 
 #Update health ui
 func _update_health_ui():
-	$Camera2D/Control_Player/ProgressBar_Health.value = health
+	%PlayerCamera/Control_Player/ProgressBar_Health.value = health

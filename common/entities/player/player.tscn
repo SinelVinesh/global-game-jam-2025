@@ -1,23 +1,23 @@
 [gd_scene load_steps=34 format=3 uid="uid://ble8ph76k1ad2"]
 
-[ext_resource type="Texture2D" uid="uid://bseq4gi3wb6nu" path="res://assets/Wizard/Wizard6.png" id="1"]
-[ext_resource type="Texture2D" uid="uid://iv334igy2f57" path="res://assets/Wizard/Wizard5.png" id="2"]
-[ext_resource type="Texture2D" uid="uid://ctw4cj43021m6" path="res://assets/Wizard/Wizard0.png" id="3"]
-[ext_resource type="Texture2D" uid="uid://cj4c6i4bqiwgr" path="res://assets/Wizard/Wizard4.png" id="4"]
-[ext_resource type="Texture2D" uid="uid://bx67ruhw5e8mk" path="res://assets/Wizard/Wizard1.png" id="5"]
-[ext_resource type="Texture2D" uid="uid://bpveg36y2c7lp" path="res://assets/Wizard/Wizard2.png" id="6"]
-[ext_resource type="Texture2D" uid="uid://eb4s8105bcac" path="res://assets/Wizard/Wizard3.png" id="7"]
+[ext_resource type="Texture2D" uid="uid://bseq4gi3wb6nu" path="res://Assets/Wizard/Wizard6.png" id="1"]
+[ext_resource type="Texture2D" uid="uid://iv334igy2f57" path="res://Assets/Wizard/Wizard5.png" id="2"]
+[ext_resource type="Texture2D" uid="uid://ctw4cj43021m6" path="res://Assets/Wizard/Wizard0.png" id="3"]
+[ext_resource type="Texture2D" uid="uid://cj4c6i4bqiwgr" path="res://Assets/Wizard/Wizard4.png" id="4"]
+[ext_resource type="Texture2D" uid="uid://bx67ruhw5e8mk" path="res://Assets/Wizard/Wizard1.png" id="5"]
+[ext_resource type="Texture2D" uid="uid://bpveg36y2c7lp" path="res://Assets/Wizard/Wizard2.png" id="6"]
+[ext_resource type="Texture2D" uid="uid://eb4s8105bcac" path="res://Assets/Wizard/Wizard3.png" id="7"]
 [ext_resource type="Script" path="res://common/entities/player/player.gd" id="8"]
-[ext_resource type="Texture2D" uid="uid://d7p0yxryg777" path="res://assets/shadow.png" id="9"]
-[ext_resource type="Texture2D" uid="uid://5eromldfsrvs" path="res://assets/Star.png" id="10"]
-[ext_resource type="Texture2D" uid="uid://d2w2xj3u0ymy8" path="res://assets/Wizard/Wizard_death_2.png" id="11"]
-[ext_resource type="Texture2D" uid="uid://b5nabpvjlts67" path="res://assets/Wizard/Wizard_death_3.png" id="12"]
-[ext_resource type="Texture2D" uid="uid://chujjq5oyxcf1" path="res://assets/Wizard/Wizard_death_4.png" id="13"]
-[ext_resource type="Texture2D" uid="uid://cls2gkogjm6c3" path="res://assets/Wizard/Wizard_death_1.png" id="14"]
-[ext_resource type="Texture2D" uid="uid://ce8nqigmmjnw2" path="res://assets/Wizard/Wizard_death_0.png" id="15"]
-[ext_resource type="Texture2D" uid="uid://diy7w3rutvnvs" path="res://assets/Wizard/Wizard_death_5.png" id="16"]
-[ext_resource type="Texture2D" uid="uid://7d3sh66a0bej" path="res://assets/Wizard/Wizard_death_6.png" id="17"]
-[ext_resource type="Texture2D" uid="uid://b34a8ai04r4qy" path="res://assets/Wizard/Wizard_death_7.png" id="18"]
+[ext_resource type="Texture2D" uid="uid://d7p0yxryg777" path="res://Assets/shadow.png" id="9"]
+[ext_resource type="Texture2D" uid="uid://5eromldfsrvs" path="res://Assets/Star.png" id="10"]
+[ext_resource type="Texture2D" uid="uid://d2w2xj3u0ymy8" path="res://Assets/Wizard/Wizard_death_2.png" id="11"]
+[ext_resource type="Texture2D" uid="uid://b5nabpvjlts67" path="res://Assets/Wizard/Wizard_death_3.png" id="12"]
+[ext_resource type="Texture2D" uid="uid://chujjq5oyxcf1" path="res://Assets/Wizard/Wizard_death_4.png" id="13"]
+[ext_resource type="Texture2D" uid="uid://cls2gkogjm6c3" path="res://Assets/Wizard/Wizard_death_1.png" id="14"]
+[ext_resource type="Texture2D" uid="uid://ce8nqigmmjnw2" path="res://Assets/Wizard/Wizard_death_0.png" id="15"]
+[ext_resource type="Texture2D" uid="uid://diy7w3rutvnvs" path="res://Assets/Wizard/Wizard_death_5.png" id="16"]
+[ext_resource type="Texture2D" uid="uid://7d3sh66a0bej" path="res://Assets/Wizard/Wizard_death_6.png" id="17"]
+[ext_resource type="Texture2D" uid="uid://b34a8ai04r4qy" path="res://Assets/Wizard/Wizard_death_7.png" id="18"]
 [ext_resource type="PackedScene" uid="uid://cu6mupu6sae4k" path="res://common/entities/player_experience/player_experience.tscn" id="19_50iiu"]
 
 [sub_resource type="SpriteFrames" id="1"]
@@ -316,9 +316,10 @@ collision_mask = 5
 position = Vector2(0, -32)
 shape = SubResource("2")
 
-[node name="Camera2D" type="Camera2D" parent="."]
+[node name="PlayerCamera" type="Camera2D" parent="."]
+unique_name_in_owner = true
 
-[node name="Control_Player" type="Control" parent="Camera2D"]
+[node name="Control_Player" type="Control" parent="PlayerCamera"]
 custom_minimum_size = Vector2(1280, 720)
 layout_mode = 3
 anchors_preset = 0
@@ -327,7 +328,7 @@ offset_top = -357.0
 offset_right = 639.0
 offset_bottom = 363.0
 
-[node name="ProgressBar_Health" type="ProgressBar" parent="Camera2D/Control_Player"]
+[node name="ProgressBar_Health" type="ProgressBar" parent="PlayerCamera/Control_Player"]
 layout_mode = 0
 offset_left = 90.0
 offset_top = 21.0
@@ -336,7 +337,7 @@ offset_bottom = 48.0
 rounded = true
 show_percentage = false
 
-[node name="Label_HP_Text" type="Label" parent="Camera2D/Control_Player"]
+[node name="Label_HP_Text" type="Label" parent="PlayerCamera/Control_Player"]
 layout_mode = 0
 offset_left = 31.0
 offset_top = 23.0
