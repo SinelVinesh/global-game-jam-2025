@@ -2,7 +2,7 @@ extends CharacterBody2D
 
 
 @export var speed = 100
-@export var damage = randi_range(10, 20)
+@export var damage = 1
 
 
 var player_position

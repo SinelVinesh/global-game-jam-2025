@@ -1,15 +1,15 @@
 [gd_scene load_steps=19 format=3 uid="uid://c08ra0yyew0e6"]
 
-[ext_resource type="Texture2D" uid="uid://dgywkno5tbxb7" path="res://Assets/Skeleton/Skeleton0.png" id="1"]
-[ext_resource type="Texture2D" uid="uid://df1se7mc7eyek" path="res://Assets/Skeleton/Skeleton1.png" id="2"]
-[ext_resource type="Texture2D" uid="uid://bknts3aalksly" path="res://Assets/Skeleton/Skeleton2.png" id="3"]
-[ext_resource type="Texture2D" uid="uid://b24skxnw3dyac" path="res://Assets/Skeleton/Skeleton3.png" id="4"]
-[ext_resource type="Texture2D" uid="uid://d7p0yxryg777" path="res://Assets/shadow.png" id="5"]
-[ext_resource type="Script" path="res://Enemy.gd" id="6"]
-[ext_resource type="Texture2D" uid="uid://d4db2kijoa33g" path="res://Assets/Skeleton/Skeleton_death2.png" id="7"]
-[ext_resource type="Texture2D" uid="uid://oq5ppsxvnbki" path="res://Assets/Skeleton/Skeleton_death0.png" id="8"]
-[ext_resource type="Texture2D" uid="uid://bmk2lwgx2b4vd" path="res://Assets/Skeleton/Skeleton_death1.png" id="9"]
-[ext_resource type="Texture2D" uid="uid://553un32s6dwp" path="res://Assets/Skeleton/Skeleton_death3.png" id="10"]
+[ext_resource type="Texture2D" uid="uid://dgywkno5tbxb7" path="res://assets/Skeleton/Skeleton0.png" id="1"]
+[ext_resource type="Texture2D" uid="uid://df1se7mc7eyek" path="res://assets/Skeleton/Skeleton1.png" id="2"]
+[ext_resource type="Texture2D" uid="uid://bknts3aalksly" path="res://assets/Skeleton/Skeleton2.png" id="3"]
+[ext_resource type="Texture2D" uid="uid://b24skxnw3dyac" path="res://assets/Skeleton/Skeleton3.png" id="4"]
+[ext_resource type="Texture2D" uid="uid://d7p0yxryg777" path="res://assets/shadow.png" id="5"]
+[ext_resource type="Script" path="res://common/entities/enemy/enemy.gd" id="6"]
+[ext_resource type="Texture2D" uid="uid://d4db2kijoa33g" path="res://assets/Skeleton/Skeleton_death2.png" id="7"]
+[ext_resource type="Texture2D" uid="uid://oq5ppsxvnbki" path="res://assets/Skeleton/Skeleton_death0.png" id="8"]
+[ext_resource type="Texture2D" uid="uid://bmk2lwgx2b4vd" path="res://assets/Skeleton/Skeleton_death1.png" id="9"]
+[ext_resource type="Texture2D" uid="uid://553un32s6dwp" path="res://assets/Skeleton/Skeleton_death3.png" id="10"]
 
 [sub_resource type="SpriteFrames" id="1"]
 animations = [{
@@ -54,7 +54,7 @@ height = 72.0
 
 [sub_resource type="CapsuleShape2D" id="3"]
 radius = 21.0
-height = 42.0
+height = 104.0
 
 [sub_resource type="Animation" id="4"]
 resource_name = "Death"
@@ -312,7 +312,7 @@ position = Vector2(0, -79)
 shape = SubResource("2")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
-position = Vector2(1, -89)
+position = Vector2(2, -52)
 shape = SubResource("3")
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="."]
