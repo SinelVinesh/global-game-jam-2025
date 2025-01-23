@@ -1,4 +1,4 @@
-[gd_scene load_steps=33 format=3 uid="uid://ble8ph76k1ad2"]
+[gd_scene load_steps=34 format=3 uid="uid://ble8ph76k1ad2"]
 
 [ext_resource type="Texture2D" uid="uid://bseq4gi3wb6nu" path="res://Assets/Wizard/Wizard6.png" id="1"]
 [ext_resource type="Texture2D" uid="uid://iv334igy2f57" path="res://Assets/Wizard/Wizard5.png" id="2"]
@@ -18,6 +18,7 @@
 [ext_resource type="Texture2D" uid="uid://diy7w3rutvnvs" path="res://Assets/Wizard/Wizard_death_5.png" id="16"]
 [ext_resource type="Texture2D" uid="uid://7d3sh66a0bej" path="res://Assets/Wizard/Wizard_death_6.png" id="17"]
 [ext_resource type="Texture2D" uid="uid://b34a8ai04r4qy" path="res://Assets/Wizard/Wizard_death_7.png" id="18"]
+[ext_resource type="PackedScene" uid="uid://cu6mupu6sae4k" path="res://Experience_player.tscn" id="19_50iiu"]
 
 [sub_resource type="SpriteFrames" id="1"]
 animations = [{
@@ -317,6 +318,32 @@ shape = SubResource("2")
 
 [node name="Camera2D" type="Camera2D" parent="."]
 
+[node name="Control_Player" type="Control" parent="Camera2D"]
+custom_minimum_size = Vector2(1280, 720)
+layout_mode = 3
+anchors_preset = 0
+offset_left = -641.0
+offset_top = -357.0
+offset_right = 639.0
+offset_bottom = 363.0
+
+[node name="ProgressBar_Health" type="ProgressBar" parent="Camera2D/Control_Player"]
+layout_mode = 0
+offset_left = 90.0
+offset_top = 21.0
+offset_right = 390.0
+offset_bottom = 48.0
+rounded = true
+show_percentage = false
+
+[node name="Label_HP_Text" type="Label" parent="Camera2D/Control_Player"]
+layout_mode = 0
+offset_left = 31.0
+offset_top = 23.0
+offset_right = 71.0
+offset_bottom = 46.0
+text = "HP"
+
 [node name="ShootAnimationPlayer" type="AnimationPlayer" parent="."]
 libraries = {
 "": SubResource("AnimationLibrary_3a0ds")
@@ -347,5 +374,11 @@ autoplay = "Scaling"
 libraries = {
 "": SubResource("AnimationLibrary_0cqr5")
 }
+
+[node name="Experience_Player" parent="." instance=ExtResource("19_50iiu")]
+offset_left = -123.0
+offset_top = -354.0
+offset_right = -123.0
+offset_bottom = -354.0
 
 [connection signal="body_entered" from="Hurtbox" to="." method="_on_hurtbox_body_entered"]

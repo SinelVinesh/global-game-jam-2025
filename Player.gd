@@ -2,6 +2,14 @@ extends Node2D
 
 
 @export var speed_int = 10
+@export var max_health = 100
+
+var health
+
+
+func _ready() -> void:
+	health = max_health
+	$Camera2D/Control_Player/ProgressBar_Health.value = health
 
 
 func _physics_process(delta): 
@@ -28,7 +36,7 @@ func _physics_process(delta):
 
 	if dir_int.x < 0:
 		$AnimatedSprite2D.flip_h = true
-	else:
+	elif dir_int.x > 0:
 		$AnimatedSprite2D.flip_h = false
 
 
@@ -43,5 +51,12 @@ func restart_game():
 
 
 func _on_hurtbox_body_entered(body: Node2D) -> void:
-	print("Die")
-	$DeathAnimationPlayer.play("Death")
+	if health <= 0:
+		$DeathAnimationPlayer.play("Death")
+	else:
+		health -= body.damage
+		_update_health_ui()
+
+
+func _update_health_ui():
+	$Camera2D/Control_Player/ProgressBar_Health.value = health
