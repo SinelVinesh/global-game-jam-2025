@@ -1,18 +1,4 @@
-extends CharacterBody2D
-
-
-@export var speed = 100
-@export var damage = 1
-@export var max_health = 30
-@export var exp_point_min = 5
-@export var exp_point_max = 15
-
-@export var flip_animation = false
-
-var health
-var player_position
-var damage_taken = 0
-var experience_point = 0
+extends "res://common/entities/enemy/enemy.gd" #Extends enemy.gd lmao
 
 
 func _ready():
@@ -24,8 +10,6 @@ func _ready():
 	$Control_Enemy/TXProgressBar_Health.max_value = health
 	_update_health_ui()
 
-	experience_point = randi_range(exp_point_min, exp_point_max)
-
 
 func _physics_process(delta):
 	player_position = get_parent().get_node("Player").global_position
@@ -36,19 +20,15 @@ func _physics_process(delta):
 		$AnimatedSprite2D.play("default")
 
 	if velocity.x < 0:
-		if flip_animation:
-			$AnimatedSprite2D.flip_h = false
-		else:
-			$AnimatedSprite2D.flip_h = true
+		$AnimatedSprite2D.flip_h = true
 	else:
-		if flip_animation:
-			$AnimatedSprite2D.flip_h = true
-		else:
-			$AnimatedSprite2D.flip_h = false
+		$AnimatedSprite2D.flip_h = false
+
 
 #Update health ui
 func _update_health_ui():
 	$Control_Enemy/TXProgressBar_Health.value = health
+
 
 #Handle receive damage
 func _receive_damage():

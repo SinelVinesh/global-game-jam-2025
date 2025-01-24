@@ -1,0 +1,19 @@
+[remap]
+
+importer="mp3"
+type="AudioStreamMP3"
+uid="uid://cg40t4x8fptab"
+path="res://.godot/imported/Bubble popping 2.mp3-a515f5d37fe1eb7cad15e04b9aa75cfc.mp3str"
+
+[deps]
+
+source_file="res://Assets/SFX/Bubble popping 2.mp3"
+dest_files=["res://.godot/imported/Bubble popping 2.mp3-a515f5d37fe1eb7cad15e04b9aa75cfc.mp3str"]
+
+[params]
+
+loop=false
+loop_offset=0
+bpm=0
+beat_count=0
+bar_beats=4
