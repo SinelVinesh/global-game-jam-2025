@@ -1,8 +1,8 @@
 class_name BossState extends EnemyState
 
-const DASH_BACK = "dash_back"
-const ATTACK_BUBBLE_BARRAGE = "attack_bubble_barrage"
-const ATTACK_BUBBLE_DROP = "attack_bubble_drop"
+const DASH_BACK = "DashBack"
+const ATTACK_BUBBLE_BARRAGE = "BubbleBarrage"
+const ATTACK_BUBBLE_DROP = "BubbleDrop"
 
 func _ready() -> void :
 	await owner.ready

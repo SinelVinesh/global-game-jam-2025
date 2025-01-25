@@ -22,7 +22,7 @@ var experience_point = 0
 
 func _ready():
 	player_position = get_parent().get_node("Player").global_position
-	position = player_position + Vector2(500, 0).rotated(randf_range(0, 2 * PI))
+	position = player_position + Vector2(1000, 0).rotated(randf_range(0, 2 * PI))
 	velocity = (player_position - position).normalized() * speed
 
 	health = max_health

@@ -117,7 +117,6 @@ func _hit_animation():
 
 #Spawn boss
 func _on_timer_spawn_boss_timeout() -> void:
-	print("Boss spawned")
 	get_parent().add_child(load("res://common/entities/enemies/boss/boss.tscn").instantiate())
 
 

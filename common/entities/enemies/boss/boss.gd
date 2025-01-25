@@ -1,14 +1,20 @@
 class_name Boss extends Enemy
 
+var initial_boss_speed = 120
+var bubble_barrage_timer = 3 # 5 seconds
+var current_bubble_barrage_timer = 0
+var bubble_drop_timer = 5 # 5 seconds
+var current_bubble_drop_timer = 5
+var dash_back_timer = 10 # 10 seconds
+var current_dash_back_timer = 10
 
 func _init():
-	speed = 150
+	speed = initial_boss_speed
 	damage = 10
 	max_health = 300
 	exp_point_min = 50
 	exp_point_max = 150
 	flip_animation = false
-
 
 #Update health ui
 func _update_health_ui():

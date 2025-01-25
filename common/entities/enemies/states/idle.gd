@@ -1,4 +1,4 @@
-extends EnemyState
+class_name EnemyIdle extends EnemyState
 
 func enter(_previous_state_path: String, _data := {}) -> void:
 	enemy.velocity = Vector2.ZERO

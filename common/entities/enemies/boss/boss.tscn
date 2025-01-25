@@ -1,4 +1,4 @@
-[gd_scene load_steps=57 format=3 uid="uid://cru8ldfyrkjic"]
+[gd_scene load_steps=59 format=3 uid="uid://cru8ldfyrkjic"]
 
 [ext_resource type="Script" path="res://common/entities/enemies/boss/boss.gd" id="1_ufqce"]
 [ext_resource type="Texture2D" uid="uid://d7p0yxryg777" path="res://assets/shadow.png" id="2_i338b"]
@@ -9,11 +9,13 @@
 [ext_resource type="Texture2D" uid="uid://37xekfpqetsd" path="res://assets/Belzebubble -Assets/Characters/Belzebubble/IDLE/base_idle_stretch.png" id="7_kd3bp"]
 [ext_resource type="Texture2D" uid="uid://b0pehobtpxoug" path="res://assets/UI/Belzebubs_Attack_Heatlh_Under.png" id="11_b4juu"]
 [ext_resource type="Script" path="res://common/entities/state/state_machine.gd" id="11_h7crp"]
+[ext_resource type="Script" path="res://common/entities/enemies/boss/state/boss_idle.gd" id="12_6mqnb"]
 [ext_resource type="Texture2D" uid="uid://clpbyd4cuo8q4" path="res://assets/UI/Belzebubs_Attack_Heatlh_Over.png" id="12_aq061"]
-[ext_resource type="Script" path="res://common/entities/enemies/states/idle.gd" id="12_gkn3f"]
-[ext_resource type="Script" path="res://common/entities/enemies/states/follow.gd" id="13_3an37"]
 [ext_resource type="Texture2D" uid="uid://ccnlvpvhv3plh" path="res://assets/UI/Belzebubs_Attack_Heatlh_Progress.png" id="13_clb5q"]
+[ext_resource type="Script" path="res://common/entities/enemies/boss/state/boss_follow.gd" id="13_uaeyc"]
 [ext_resource type="Script" path="res://common/entities/enemies/boss/state/bubble_barrage.gd" id="14_4ykoh"]
+[ext_resource type="Script" path="res://common/entities/enemies/boss/state/dash_back.gd" id="15_xb78p"]
+[ext_resource type="Script" path="res://common/entities/enemies/boss/state/bubble_drop.gd" id="16_xuex5"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_nu7qn"]
 atlas = ExtResource("7_kd3bp")
@@ -274,7 +276,7 @@ radius = 44.0
 height = 88.0
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_0hpql"]
-radius = 328.123
+radius = 475.067
 
 [sub_resource type="CapsuleShape2D" id="3"]
 radius = 60.0
@@ -554,7 +556,6 @@ position = Vector2(-8, -112)
 shape = SubResource("2")
 
 [node name="Range" type="Area2D" parent="."]
-visible = false
 collision_layer = 2
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Range"]
@@ -597,13 +598,19 @@ texture_progress = ExtResource("13_clb5q")
 
 [node name="StateMachine" type="Node" parent="." node_paths=PackedStringArray("initial_state")]
 script = ExtResource("11_h7crp")
-initial_state = NodePath("BubbleBarrage")
+initial_state = NodePath("Follow")
 
 [node name="Idle" type="Node" parent="StateMachine"]
-script = ExtResource("12_gkn3f")
+script = ExtResource("12_6mqnb")
 
 [node name="Follow" type="Node" parent="StateMachine"]
-script = ExtResource("13_3an37")
+script = ExtResource("13_uaeyc")
 
 [node name="BubbleBarrage" type="Node" parent="StateMachine"]
 script = ExtResource("14_4ykoh")
+
+[node name="DashBack" type="Node" parent="StateMachine"]
+script = ExtResource("15_xb78p")
+
+[node name="BubbleDrop" type="Node" parent="StateMachine"]
+script = ExtResource("16_xuex5")
