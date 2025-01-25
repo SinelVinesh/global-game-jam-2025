@@ -65,7 +65,7 @@ func shoot(): add_child(load("res://common/entities/bullet/bullet.tscn").instant
 
 
 #Spawn ennemies automatically
-# func spawn(): get_parent().add_child(load("res://common/entities/enemies/common_bubble/common_bubble.tscn").instantiate())
+func spawn(): get_parent().add_child(load("res://common/entities/enemies/common_bubble/common_bubble.tscn").instantiate())
 
 
 #Restart game on player death

@@ -20,6 +20,13 @@ func _init():
 func _update_health_ui():
 	$Control_Enemy/TXProgressBar_Health.value = health
 
+func _physics_process(delta: float) -> void:
+	if health <= max_health / 2:
+		initial_boss_speed = 160
+		bubble_barrage_timer = 2
+		bubble_drop_timer = 3
+		dash_back_timer = 7
+		damage *= 15
 
 #Handle receive damage
 func _receive_damage():

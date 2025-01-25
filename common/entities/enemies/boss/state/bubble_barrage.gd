@@ -10,6 +10,6 @@ func enter(_previous_state_path: String, _data := {}) -> void:
 		var bubble = loaded_bubble.instantiate() 
 		get_parent().add_child(bubble)
 		bubble.position = enemy.global_position
-		bubble.set_destination(initial_bubble_pos.rotated(i*0.3*(-1**i)) + enemy.player_position, i* 0.2, false)
+		bubble.init_bullet(enemy.damage, initial_bubble_pos.rotated(i*0.3*(-1**i)) + enemy.player_position, i* 0.2, false)
 	enemy.current_bubble_barrage_timer = enemy.bubble_barrage_timer
 	finished.emit(IDLE)
