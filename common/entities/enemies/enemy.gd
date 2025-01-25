@@ -47,3 +47,11 @@ func _receive_damage():
 		animation_player.play("Death")
 	else:
 		animation_player.play("Enemy_Hit")
+
+
+#Handle rexperience given to player
+func _give_experience():
+	var player_owner = get_parent().get_node("Player")
+	var experience_gained = experience_point
+	player_owner.get_node("Experience_Player")._gain_experience(experience_gained)
+	animation_player.play("Enemy_Hit")

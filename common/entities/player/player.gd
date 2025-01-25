@@ -11,6 +11,7 @@ var damage_taken := 0
 var current_i_frames := 0
 
 var is_hit = false
+var dash_is_reset = true
 
 #Call when node enters main scene
 func _ready() -> void:
@@ -40,6 +41,13 @@ func _physics_process(delta):
 
 	if Input.is_action_pressed("ui_left"):
 		dir_int.x = -1
+	
+	if Input.is_action_just_pressed("Dash") and dash_is_reset:
+		dash_is_reset = false
+		speed_int = 20
+		await get_tree().create_timer(0.5).timeout
+		speed_int = 10
+		dash_is_reset = true
 
 	position += dir_int * speed_int
 
@@ -47,7 +55,10 @@ func _physics_process(delta):
 	if dir_int == Vector2.ZERO:
 		$AnimatedSprite2D.play("Idle")
 	else:
-		$AnimatedSprite2D.play("default")
+		if speed_int == 10:
+			$AnimatedSprite2D.play("default")
+		else:
+			$AnimatedSprite2D.play("Dash")
 
 	if dir_int.x < 0:
 		$AnimatedSprite2D.flip_h = true
@@ -137,3 +148,9 @@ func _on_timer_sb_counter_timeout() -> void:
 #Update boss timer
 func _update_boss_timer():
 	$PlayerCamera/Control_Player/Label_Timer_Boss.text = str(spawn_boss_time)
+
+#Pause game
+func _on_experience_player_pause_game() -> void:
+	pass # Replace with function body.
+	var game_scene_tree = get_tree()
+	game_scene_tree.paused = true
