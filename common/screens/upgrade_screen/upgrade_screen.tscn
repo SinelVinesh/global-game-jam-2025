@@ -1,0 +1,26 @@
+[gd_scene load_steps=3 format=3 uid="uid://c0ajfbr27rq71"]
+
+[ext_resource type="Script" path="res://common/screens/upgrade_screen/upgrade_screen.gd" id="1_eul3o"]
+[ext_resource type="PackedScene" uid="uid://cdubinj2qfhn1" path="res://common/entities/player_upgrade/player_upgrade.tscn" id="1_ueg8s"]
+
+[node name="upgrade_screen" type="CanvasLayer"]
+script = ExtResource("1_eul3o")
+
+[node name="Marker2D_upgrade_01" type="Marker2D" parent="."]
+position = Vector2(640, 365)
+
+[node name="player_upgrade" parent="Marker2D_upgrade_01" instance=ExtResource("1_ueg8s")]
+
+[node name="Marker2D_upgrade_02" type="Marker2D" parent="."]
+position = Vector2(1045, 365)
+
+[node name="player_upgrade" parent="Marker2D_upgrade_02" instance=ExtResource("1_ueg8s")]
+
+[node name="Marker2D_upgrade_03" type="Marker2D" parent="."]
+position = Vector2(235, 365)
+
+[node name="player_upgrade" parent="Marker2D_upgrade_03" instance=ExtResource("1_ueg8s")]
+
+[editable path="Marker2D_upgrade_01/player_upgrade"]
+[editable path="Marker2D_upgrade_02/player_upgrade"]
+[editable path="Marker2D_upgrade_03/player_upgrade"]

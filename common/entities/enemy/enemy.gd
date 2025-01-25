@@ -56,5 +56,13 @@ func _receive_damage():
 	_update_health_ui()
 	if health <= 0:
 		$AnimationPlayer.play("Death")
+		_give_experience()
 	else:
 		$AnimationPlayer.play("Enemy_Hit")
+
+
+#Handle rexperience given to player
+func _give_experience():
+	var player_owner = get_parent().get_node("Player")
+	var experience_gained = experience_point
+	player_owner.get_node("Experience_Player")._gain_experience(experience_gained)

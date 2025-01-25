@@ -1,8 +1,9 @@
-[gd_scene load_steps=8 format=3 uid="uid://c5jjcxpjhpdlg"]
+[gd_scene load_steps=7 format=3 uid="uid://c5jjcxpjhpdlg"]
 
 [ext_resource type="Texture2D" uid="uid://cbibkckg2kmce" path="res://Assets/Tileset Grass.png" id="1_wv8he"]
 [ext_resource type="PackedScene" uid="uid://ble8ph76k1ad2" path="res://common/entities/player/player.tscn" id="2_xelcb"]
 [ext_resource type="PackedScene" uid="uid://c08ra0yyew0e6" path="res://common/entities/enemy/enemy.tscn" id="3_y7w2g"]
+[ext_resource type="PackedScene" uid="uid://c0ajfbr27rq71" path="res://common/screens/upgrade_screen/upgrade_screen.tscn" id="4_hdxxd"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_gx48d"]
 texture = ExtResource("1_wv8he")
@@ -4042,15 +4043,6 @@ texture = ExtResource("1_wv8he")
 [sub_resource type="TileSet" id="1"]
 sources/0 = SubResource("TileSetAtlasSource_gx48d")
 
-[sub_resource type="Animation" id="2"]
-resource_name = "Title"
-length = 2.0
-
-[sub_resource type="AnimationLibrary" id="AnimationLibrary_65mwm"]
-_data = {
-"Title": SubResource("2")
-}
-
 [node name="Main" type="Node2D"]
 
 [node name="TileMap" type="TileMap" parent="."]
@@ -4080,16 +4072,4 @@ position = Vector2(942, 117)
 [node name="Enemy5" parent="Node2D" instance=ExtResource("3_y7w2g")]
 position = Vector2(712, 424)
 
-[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
-libraries = {
-"": SubResource("AnimationLibrary_65mwm")
-}
-autoplay = "Title"
-
-[node name="Control" type="Control" parent="."]
-layout_mode = 3
-anchors_preset = 15
-anchor_right = 1.0
-anchor_bottom = 1.0
-grow_horizontal = 2
-grow_vertical = 2
+[node name="upgrade_screen" parent="." instance=ExtResource("4_hdxxd")]

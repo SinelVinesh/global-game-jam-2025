@@ -8,6 +8,9 @@ var experience_required = _get_experience_required(level + 1)
 var amount
 
 
+signal pause_game
+
+
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
 	pass # Replace with function body.
@@ -38,3 +41,4 @@ func _gain_experience(amount):
 func _level_up():
 	level += 1
 	experience_required = _get_experience_required(level + 1)
+	emit_signal("pause_game")

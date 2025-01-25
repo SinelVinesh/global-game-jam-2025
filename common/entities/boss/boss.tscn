@@ -427,7 +427,6 @@ texture = ExtResource("2_i338b")
 position = Vector2(-9, -112)
 scale = Vector2(3, 3)
 sprite_frames = SubResource("1")
-frame_progress = 0.318442
 
 [node name="Area2D" type="Area2D" parent="."]
 collision_layer = 6
