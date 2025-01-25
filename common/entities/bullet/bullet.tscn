@@ -1,8 +1,8 @@
 [gd_scene load_steps=13 format=3 uid="uid://cavpodirmd3fs"]
 
-[ext_resource type="Texture2D" uid="uid://cj6b85okf1l0p" path="res://Assets/Circle_blurred.png" id="1"]
+[ext_resource type="Texture2D" uid="uid://cj6b85okf1l0p" path="res://assets/Circle_blurred.png" id="1"]
 [ext_resource type="Script" path="res://common/entities/bullet/bullet.gd" id="2"]
-[ext_resource type="Texture2D" uid="uid://dflkrpqidshxc" path="res://Assets/Dust1.png" id="3"]
+[ext_resource type="Texture2D" uid="uid://dflkrpqidshxc" path="res://assets/Dust1.png" id="3"]
 
 [sub_resource type="CircleShape2D" id="1"]
 radius = 17.088
@@ -160,4 +160,4 @@ libraries = {
 }
 autoplay = "Shoot"
 
-[connection signal="area_entered" from="Node2D/Area2D" to="." method="enemyHit"]
+[connection signal="body_entered" from="Node2D/Area2D" to="." method="_on_area_2d_body_entered"]

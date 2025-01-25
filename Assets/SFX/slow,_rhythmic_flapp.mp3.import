@@ -3,12 +3,12 @@
 importer="mp3"
 type="AudioStreamMP3"
 uid="uid://bfntlh5x1lgqd"
-path="res://.godot/imported/slow,_rhythmic_flapp.mp3-da1766db9c991b7f0c75fe491db61a1b.mp3str"
+path="res://.godot/imported/slow,_rhythmic_flapp.mp3-f2fa7405085620a4d509b4ad69998c9b.mp3str"
 
 [deps]
 
-source_file="res://Assets/SFX/slow,_rhythmic_flapp.mp3"
-dest_files=["res://.godot/imported/slow,_rhythmic_flapp.mp3-da1766db9c991b7f0c75fe491db61a1b.mp3str"]
+source_file="res://assets/SFX/slow,_rhythmic_flapp.mp3"
+dest_files=["res://.godot/imported/slow,_rhythmic_flapp.mp3-f2fa7405085620a4d509b4ad69998c9b.mp3str"]
 
 [params]
 

@@ -3,15 +3,15 @@
 importer="texture"
 type="CompressedTexture2D"
 uid="uid://clpbyd4cuo8q4"
-path="res://.godot/imported/Belzebubs_Attack_Heatlh_Over.png-4e4a2dcfd925dcd38547575aa8d254a8.ctex"
+path="res://.godot/imported/Belzebubs_Attack_Heatlh_Over.png-5895be800cc38db1ef8f9538c90bb35f.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Assets/UI/Belzebubs_Attack_Heatlh_Over.png"
-dest_files=["res://.godot/imported/Belzebubs_Attack_Heatlh_Over.png-4e4a2dcfd925dcd38547575aa8d254a8.ctex"]
+source_file="res://assets/UI/Belzebubs_Attack_Heatlh_Over.png"
+dest_files=["res://.godot/imported/Belzebubs_Attack_Heatlh_Over.png-5895be800cc38db1ef8f9538c90bb35f.ctex"]
 
 [params]
 

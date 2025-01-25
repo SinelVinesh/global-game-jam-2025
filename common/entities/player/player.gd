@@ -65,7 +65,7 @@ func shoot(): add_child(load("res://common/entities/bullet/bullet.tscn").instant
 
 
 #Spawn ennemies automatically
-func spawn(): get_parent().add_child(load("res://common/entities/enemy/enemy.tscn").instantiate())
+# func spawn(): get_parent().add_child(load("res://common/entities/enemies/common_bubble/common_bubble.tscn").instantiate())
 
 
 #Restart game on player death
@@ -78,6 +78,16 @@ func _on_hurtbox_body_entered(body: Node2D) -> void:
 	damage_taken += body.damage
 	is_hit = true
 
+func _on_hurtbox_area_entered(area: Area2D) -> void:
+	if area.is_in_group("Damaging"):
+		damage_taken += area.damage
+		is_hit = true
+
+
+func _on_hurtbox_area_exited(area: Area2D) -> void:
+	if area.is_in_group("Damaging"):
+		damage_taken -= area.damage
+		is_hit = false
 
 func _on_hurtbox_body_exited(body: Node2D) -> void:
 	damage_taken -= body.damage
@@ -107,8 +117,8 @@ func _hit_animation():
 
 #Spawn boss
 func _on_timer_spawn_boss_timeout() -> void:
-	pass # Replace with function body.
-	get_parent().add_child(load("res://common/entities/boss/boss.tscn").instantiate())
+	print("Boss spawned")
+	get_parent().add_child(load("res://common/entities/enemies/boss/boss.tscn").instantiate())
 
 
 #Handle boss spawn counter

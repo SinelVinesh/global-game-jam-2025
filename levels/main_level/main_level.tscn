@@ -1,8 +1,7 @@
-[gd_scene load_steps=8 format=3 uid="uid://c5jjcxpjhpdlg"]
+[gd_scene load_steps=7 format=3 uid="uid://c5jjcxpjhpdlg"]
 
-[ext_resource type="Texture2D" uid="uid://cbibkckg2kmce" path="res://Assets/Tileset Grass.png" id="1_wv8he"]
+[ext_resource type="Texture2D" uid="uid://cbibkckg2kmce" path="res://assets/Tileset Grass.png" id="1_wv8he"]
 [ext_resource type="PackedScene" uid="uid://ble8ph76k1ad2" path="res://common/entities/player/player.tscn" id="2_xelcb"]
-[ext_resource type="PackedScene" uid="uid://c08ra0yyew0e6" path="res://common/entities/enemy/enemy.tscn" id="3_y7w2g"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_gx48d"]
 texture = ExtResource("1_wv8he")
@@ -4064,21 +4063,6 @@ layer_0/tile_data = PackedInt32Array(0, 524288, 0, 65536, 524288, 1, 131072, 524
 
 [node name="Player" parent="Node2D" instance=ExtResource("2_xelcb")]
 position = Vector2(640, 360)
-
-[node name="Enemy" parent="Node2D" instance=ExtResource("3_y7w2g")]
-position = Vector2(96, 149)
-
-[node name="Enemy2" parent="Node2D" instance=ExtResource("3_y7w2g")]
-position = Vector2(91, 603)
-
-[node name="Enemy3" parent="Node2D" instance=ExtResource("3_y7w2g")]
-position = Vector2(955, 621)
-
-[node name="Enemy4" parent="Node2D" instance=ExtResource("3_y7w2g")]
-position = Vector2(942, 117)
-
-[node name="Enemy5" parent="Node2D" instance=ExtResource("3_y7w2g")]
-position = Vector2(712, 424)
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="."]
 libraries = {

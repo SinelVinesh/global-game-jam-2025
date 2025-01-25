@@ -3,12 +3,12 @@
 importer="mp3"
 type="AudioStreamMP3"
 uid="uid://bcoe0asfyuwpj"
-path="res://.godot/imported/bubble popping 1.mp3-58f7c0e63b4f2dccabed3159f9bd0798.mp3str"
+path="res://.godot/imported/bubble popping 1.mp3-47178f12048108137eed44810d51ae74.mp3str"
 
 [deps]
 
-source_file="res://Assets/SFX/bubble popping 1.mp3"
-dest_files=["res://.godot/imported/bubble popping 1.mp3-58f7c0e63b4f2dccabed3159f9bd0798.mp3str"]
+source_file="res://assets/SFX/bubble popping 1.mp3"
+dest_files=["res://.godot/imported/bubble popping 1.mp3-47178f12048108137eed44810d51ae74.mp3str"]
 
 [params]
 

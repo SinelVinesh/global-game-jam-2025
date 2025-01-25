@@ -25,6 +25,11 @@ PauseScreen="*res://common/screens/pause_screen/pause_screen.tscn"
 window/size/viewport_width=1280
 window/size/viewport_height=720
 
+[global_group]
+
+Hurtbox=""
+Damaging=""
+
 [input]
 
 ui_left={

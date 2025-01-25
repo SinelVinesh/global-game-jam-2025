@@ -1,5 +1,4 @@
-extends CharacterBody2D
-
+class_name Enemy extends CharacterBody2D
 
 @export var speed = 100
 @export var damage = 1
@@ -9,6 +8,12 @@ extends CharacterBody2D
 
 @export var flip_animation = false
 
+@onready var animation_player = $AnimationPlayer
+@onready var hitbox = $Hitbox
+@onready var rangebox = $Range
+@onready var animated_sprite = $AnimatedSprite2D
+var distance_to_player
+
 var health
 var player_position
 var damage_taken = 0
@@ -17,7 +22,7 @@ var experience_point = 0
 
 func _ready():
 	player_position = get_parent().get_node("Player").global_position
-	position = player_position + Vector2(1000, 0).rotated(randf_range(0, 2 * PI))
+	position = player_position + Vector2(500, 0).rotated(randf_range(0, 2 * PI))
 	velocity = (player_position - position).normalized() * speed
 
 	health = max_health
@@ -26,25 +31,9 @@ func _ready():
 
 	experience_point = randi_range(exp_point_min, exp_point_max)
 
-
-func _physics_process(delta):
+func _physics_process(_delta:float)-> void:
 	player_position = get_parent().get_node("Player").global_position
-	velocity = (player_position - position).normalized() * speed
-	move_and_slide()
-
-	if velocity != Vector2.ZERO:
-		$AnimatedSprite2D.play("default")
-
-	if velocity.x < 0:
-		if flip_animation:
-			$AnimatedSprite2D.flip_h = false
-		else:
-			$AnimatedSprite2D.flip_h = true
-	else:
-		if flip_animation:
-			$AnimatedSprite2D.flip_h = true
-		else:
-			$AnimatedSprite2D.flip_h = false
+	distance_to_player = position.distance_to(player_position)
 
 #Update health ui
 func _update_health_ui():
@@ -55,6 +44,6 @@ func _receive_damage():
 	health -= damage_taken
 	_update_health_ui()
 	if health <= 0:
-		$AnimationPlayer.play("Death")
+		animation_player.play("Death")
 	else:
-		$AnimationPlayer.play("Enemy_Hit")
+		animation_player.play("Enemy_Hit")

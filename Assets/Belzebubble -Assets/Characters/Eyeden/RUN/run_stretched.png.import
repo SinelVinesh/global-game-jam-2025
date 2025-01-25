@@ -3,15 +3,15 @@
 importer="texture"
 type="CompressedTexture2D"
 uid="uid://ud3va2awxavm"
-path="res://.godot/imported/run_stretched.png-d239a8d12ee78f99c3b03e4626b449e9.ctex"
+path="res://.godot/imported/run_stretched.png-b5aa3aa9c8f497fba185e5d534afe67e.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Assets/Belzebubble -Assets/Characters/Eyeden/RUN/run_stretched.png"
-dest_files=["res://.godot/imported/run_stretched.png-d239a8d12ee78f99c3b03e4626b449e9.ctex"]
+source_file="res://assets/Belzebubble -Assets/Characters/Eyeden/RUN/run_stretched.png"
+dest_files=["res://.godot/imported/run_stretched.png-b5aa3aa9c8f497fba185e5d534afe67e.ctex"]
 
 [params]
 
