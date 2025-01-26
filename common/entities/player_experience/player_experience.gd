@@ -26,8 +26,7 @@ func _process(delta: float) -> void:
 
 #Get random experience required to level up
 func _get_experience_required(level):
-	# return round (pow (level, 3) + level * 50)
-	return round (pow (level, 0) + level * 1)
+	return round (pow (level, 3) + level * 50)
 
 
 #Handle experience gaining

@@ -1,7 +1,7 @@
 class_name Player extends Node2D
 
 
-@export var speed_int = 10
+@export var speed = 5.0
 @export var max_health = 100
 @export var i_frames = 5
 @export var spawn_boss_time = 600
@@ -13,6 +13,21 @@ var current_i_frames := 0
 var is_hit = false
 var dash_is_reset = true
 
+# weapon stats
+# mop
+var damages = Dictionary({
+	Mop : 20,
+	NailGun : 20
+})
+var delays = Dictionary({
+	Mop : 1,
+	NailGun : 1
+})
+var ranges = Dictionary({
+	Mop : 1,
+	NailGun : 1
+})
+
 #Call when node enters main scene
 func _ready() -> void:
 	health = max_health
@@ -23,6 +38,11 @@ func _ready() -> void:
 	$Timer_SB_Counter.start()
 
 	$PlayerCamera/Control_Player/Label_SpawnBoss_Text.visible = false
+
+	# base weapon
+	var mop = load("res://common/entities/weapons/mop/mop.tscn").instantiate()
+	mop.init(damages[Mop], delays[Mop], ranges[Mop])
+	$Weapons.add_child(mop)
 
 
 #Called in real time
@@ -44,18 +64,18 @@ func _physics_process(delta):
 	
 	if Input.is_action_just_pressed("Dash") and dash_is_reset:
 		dash_is_reset = false
-		speed_int = 20
+		speed = 20
 		await get_tree().create_timer(0.5).timeout
-		speed_int = 10
+		speed = 10
 		dash_is_reset = true
 
-	position += dir_int * speed_int
+	position += dir_int * speed
 
 	#Handler player movement animation
 	if dir_int == Vector2.ZERO:
 		$AnimatedSprite2D.play("Idle")
 	else:
-		if speed_int == 10:
+		if speed == 10:
 			$AnimatedSprite2D.play("walk")
 		else:
 			$AnimatedSprite2D.play("Dash")
@@ -151,3 +171,38 @@ func has_weapon(weapon) -> bool:
 		if is_instance_of(child, weapon):
 			return true
 	return false
+
+# upgrade handler
+func increase_health(amount: int) -> void:
+	max_health += amount
+	health = max_health
+	_update_health_ui()
+
+func increase_speed(amount: float) -> void:
+	speed *= amount
+
+func add_weapon(weapon) -> void:
+	if weapon == Mop:
+		var weapon_instance = load("res://common/entities/weapons/mop/mop.tscn").instantiate()
+		$Weapons.add_child(weapon_instance)
+	elif weapon == NailGun:
+		var weapon_instance = load("res://common/entities/weapons/nail_gun/nail_gun.tscn").instantiate()
+		$Weapons.add_child(weapon_instance)
+
+func update_weapon_damage(weapon, amount: int) -> void:
+	damages[weapon] += amount
+	for child in $Weapons.get_children():
+		if is_instance_of(child, weapon):
+			child.set_weapon_damage(damages[weapon])
+
+func update_weapon_range(weapon, factor: float) -> void:
+	ranges[weapon] *= factor
+	for child in $Weapons.get_children():
+		if is_instance_of(child, weapon):
+			child.set_weapon_range(ranges[weapon])
+
+func update_weapon_delay(weapon, factor: float) -> void:
+	delays[weapon] *= factor
+	for child in $Weapons.get_children():
+		if is_instance_of(child, weapon):
+			child.set_weapon_delay(delays[weapon])

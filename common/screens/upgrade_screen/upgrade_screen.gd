@@ -94,7 +94,29 @@ func _update_ui_for_card(card: Control, upgrade: Upgrade):
 	card.upgrade = upgrade
 
 func select_upgrade(upgrade: Upgrade):
-	hide()
-	get_tree().paused = false
 	print("upgrade_selected : ", upgrade.type)
 	proposed_upgrades.clear()
+	hide()
+	get_tree().paused = false
+
+	match upgrade.type:
+		UPGRADE.HEALTH_UP:
+			_player.increase_health(10)
+		UPGRADE.SPEED_UP:
+			_player.increase_speed(1.5)
+		UPGRADE.ADD_WEAPON_MOP:
+			_player.add_weapon(Mop)
+		UPGRADE.MOP_DAMAGE_UP:
+			_player.update_weapon_damage(Mop, 15)
+		UPGRADE.MOP_RANGE_UP:
+			_player.update_weapon_range(Mop, 1.5)
+		UPGRADE.MOP_ATTACK_SPEED_UP:
+			_player.update_weapon_delay(Mop, 0.5)
+		UPGRADE.ADD_WEAPON_NAIL_GUN:
+			_player.add_weapon(NailGun)
+		UPGRADE.NAIL_GUN_DAMAGE_UP:
+			_player.update_weapon_damage(NailGun, 10)
+		UPGRADE.NAIL_GUN_RANGE_UP:
+			_player.update_weapon_range(NailGun, 1.5)
+		UPGRADE.NAIL_GUN_ATTACK_SPEED_UP:
+			_player.update_weapon_delay(NailGun, 0.5)

@@ -19,6 +19,11 @@ var _range: float
 static var _enemies_in_range: Array[EnemyInRange] = []
 var _active = false
 
+func init(_init_delay: int, _init_damage: int, _init_range: int) -> void:
+	set_weapon_damage(_init_damage)
+	set_weapon_delay(_init_delay)
+	set_weapon_range(_init_range)
+
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
 	_damage = initial_damage
@@ -79,3 +84,14 @@ func get_nearest_untargeted_enemy(weapon: Weapon, current_target: EnemyInRange) 
 			result = enemy
 			break
 	return result
+
+func set_weapon_damage(damage: int) -> void:
+	_damage = damage
+
+func set_weapon_delay(factor: float) -> void:
+	_delay = factor
+
+func set_weapon_range(factor: float) -> void:
+	_range = factor
+	print("range", $Range.transform)
+	$Range.scale = Vector2(_range, _range)

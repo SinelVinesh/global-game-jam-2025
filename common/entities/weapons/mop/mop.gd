@@ -2,6 +2,7 @@ class_name Mop extends Weapon
 
 var current_target: EnemyInRange
 
+
 func _attack() -> void:
 	if _enemies_in_range.size() > 0:
 		current_target = get_nearest_untargeted_enemy(self, current_target)
