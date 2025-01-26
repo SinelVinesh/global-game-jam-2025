@@ -21,6 +21,7 @@ TransitionScreen="*res://common/screens/transition_screen/transition_screen.tscn
 PauseScreen="*res://common/screens/pause_screen/pause_screen.tscn"
 UpgradeScreen="*res://common/screens/upgrade_screen/upgrade_screen.tscn"
 AudioManager="*res://common/audio_manager/audio_manager.tscn"
+EndScrene="*res://common/screens/end_screen/end_screne.tscn"
 
 [display]
 

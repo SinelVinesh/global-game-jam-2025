@@ -148,7 +148,7 @@ tile_set = SubResource("TileSet_f5c26")
 
 [node name="Player" parent="Node2D" instance=ExtResource("2_xelcb")]
 position = Vector2(640, 360)
-spawn_boss_time = 300
+spawn_boss_time = 1
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="."]
 libraries = {

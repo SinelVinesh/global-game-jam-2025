@@ -1,4 +1,4 @@
-extends Control
+extends CanvasLayer
 
 signal on_transition_finished
 # Called when the node enters the scene tree for the first time.

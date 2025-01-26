@@ -29,3 +29,9 @@ func _physics_process(_delta: float) -> void:
 		bubble_drop_timer = 3
 		dash_back_timer = 7
 		damage = 7
+
+func init_end_screen() -> void: 
+	TransitionScreen.transition()
+	await TransitionScreen.on_transition_finished
+	EndScrene.show_end_screne()
+	queue_free()

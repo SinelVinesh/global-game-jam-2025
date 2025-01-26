@@ -1,0 +1,50 @@
+[gd_scene load_steps=3 format=3 uid="uid://2oqale0qt11b"]
+
+[ext_resource type="FontFile" uid="uid://dpv4f3xr1lkt2" path="res://assets/font/Pixuf.ttf" id="1_afitc"]
+[ext_resource type="Script" path="res://common/screens/end_screen/end_screne.gd" id="1_hai5o"]
+
+[node name="EndScrene" type="CanvasLayer"]
+process_mode = 3
+layer = 3
+script = ExtResource("1_hai5o")
+
+[node name="ColorRect" type="ColorRect" parent="."]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(0.0338533, 0.0338533, 0.0338533, 1)
+
+[node name="RichTextLabel" type="RichTextLabel" parent="."]
+anchors_preset = 14
+anchor_top = 0.5
+anchor_right = 1.0
+anchor_bottom = 0.5
+offset_left = -3.0
+offset_top = -89.0
+offset_right = -3.0
+offset_bottom = 29.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_fonts/normal_font = ExtResource("1_afitc")
+theme_override_font_sizes/normal_font_size = 64
+bbcode_enabled = true
+text = "[center] [rainbow sat=0.2][wave] You beat Belzebubble ! 
+Thank you for playing <3"
+
+[node name="RichTextLabel2" type="RichTextLabel" parent="."]
+anchors_preset = 14
+anchor_top = 0.5
+anchor_right = 1.0
+anchor_bottom = 0.5
+offset_left = -2.0
+offset_top = 292.0
+offset_right = -2.0
+offset_bottom = 410.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_fonts/normal_font = ExtResource("1_afitc")
+theme_override_font_sizes/normal_font_size = 32
+bbcode_enabled = true
+text = "[center] [wave] A game made with <3 by Dead Pixel and Sitraka"

@@ -4,6 +4,7 @@
 [ext_resource type="LabelSettings" uid="uid://cmbhe88x7xksl" path="res://assets/font/XP_label_settings.tres" id="2_arpf8"]
 
 [node name="Experience_Player" type="CanvasLayer"]
+layer = 0
 script = ExtResource("1_ceyvh")
 
 [node name="Label_Experience" type="Label" parent="."]

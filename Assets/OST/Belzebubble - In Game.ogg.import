@@ -1,0 +1,19 @@
+[remap]
+
+importer="oggvorbisstr"
+type="AudioStreamOggVorbis"
+uid="uid://dqv1u5wh6jyv"
+path="res://.godot/imported/Belzebubble - In Game.ogg-7836e99ab6c1293bd760659105642aa4.oggvorbisstr"
+
+[deps]
+
+source_file="res://assets/OST/Belzebubble - In Game.ogg"
+dest_files=["res://.godot/imported/Belzebubble - In Game.ogg-7836e99ab6c1293bd760659105642aa4.oggvorbisstr"]
+
+[params]
+
+loop=false
+loop_offset=0
+bpm=0
+beat_count=0
+bar_beats=4

@@ -459,7 +459,7 @@ _data = {
 
 [node name="Player" type="Node2D" groups=["Player"]]
 script = ExtResource("8")
-spawn_boss_time = 10
+spawn_boss_time = 300
 
 [node name="Shadow" type="Sprite2D" parent="."]
 modulate = Color(1, 1, 1, 0.4)
