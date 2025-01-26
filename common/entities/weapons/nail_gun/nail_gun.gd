@@ -1,4 +1,4 @@
-extends Weapon
+class_name NailGun extends Weapon
 
 @onready var nail_gun_bullet = preload("res://common/entities/weapons/nail_gun/nail_gun_bullet/nail_gun_bullet.tscn")
 @export var initial_speed : int = 1000

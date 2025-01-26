@@ -1,26 +1,69 @@
 [gd_scene load_steps=3 format=3 uid="uid://c0ajfbr27rq71"]
 
 [ext_resource type="Script" path="res://common/screens/upgrade_screen/upgrade_screen.gd" id="1_eul3o"]
-[ext_resource type="PackedScene" uid="uid://cdubinj2qfhn1" path="res://common/entities/player_upgrade/player_upgrade.tscn" id="1_ueg8s"]
+[ext_resource type="PackedScene" uid="uid://bbmhbfk6g1ldp" path="res://common/screens/upgrade_screen/upgrade_card/upgrade_card.tscn" id="2_vlgx8"]
 
 [node name="upgrade_screen" type="CanvasLayer"]
+process_mode = 3
 script = ExtResource("1_eul3o")
 
-[node name="Marker2D_upgrade_01" type="Marker2D" parent="."]
-position = Vector2(640, 365)
+[node name="ColorRect" type="ColorRect" parent="."]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(0, 0.1235, 0.19, 0.74902)
 
-[node name="player_upgrade" parent="Marker2D_upgrade_01" instance=ExtResource("1_ueg8s")]
+[node name="Control" type="Control" parent="."]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
 
-[node name="Marker2D_upgrade_02" type="Marker2D" parent="."]
-position = Vector2(1045, 365)
+[node name="MarginContainer" type="MarginContainer" parent="Control"]
+layout_mode = 1
+anchors_preset = 10
+anchor_right = 1.0
+grow_horizontal = 2
+theme_override_constants/margin_top = 30
 
-[node name="player_upgrade" parent="Marker2D_upgrade_02" instance=ExtResource("1_ueg8s")]
+[node name="VBoxContainer" type="VBoxContainer" parent="Control/MarginContainer"]
+layout_mode = 2
 
-[node name="Marker2D_upgrade_03" type="Marker2D" parent="."]
-position = Vector2(235, 365)
+[node name="RichTextLabel" type="RichTextLabel" parent="Control/MarginContainer/VBoxContainer"]
+custom_minimum_size = Vector2(0, 96)
+layout_mode = 2
+theme_override_font_sizes/normal_font_size = 36
+bbcode_enabled = true
+text = "[wave freq=20][center] [rainbow sat=0.4 freq=0.1] IT'S TIME TO BUBBLE UP"
 
-[node name="player_upgrade" parent="Marker2D_upgrade_03" instance=ExtResource("1_ueg8s")]
+[node name="HBoxContainer" type="Control" parent="Control/MarginContainer/VBoxContainer"]
+custom_minimum_size = Vector2(0, 500)
+layout_mode = 2
 
-[editable path="Marker2D_upgrade_01/player_upgrade"]
-[editable path="Marker2D_upgrade_02/player_upgrade"]
-[editable path="Marker2D_upgrade_03/player_upgrade"]
+[node name="Upgrade1" parent="Control/MarginContainer/VBoxContainer/HBoxContainer" instance=ExtResource("2_vlgx8")]
+unique_name_in_owner = true
+layout_mode = 2
+offset_left = 64.0
+offset_top = 6.0
+offset_right = 192.0
+offset_bottom = 166.0
+
+[node name="Upgrade2" parent="Control/MarginContainer/VBoxContainer/HBoxContainer" instance=ExtResource("2_vlgx8")]
+unique_name_in_owner = true
+layout_mode = 2
+offset_left = 440.0
+offset_top = 6.0
+offset_right = 568.0
+offset_bottom = 166.0
+
+[node name="Upgrade3" parent="Control/MarginContainer/VBoxContainer/HBoxContainer" instance=ExtResource("2_vlgx8")]
+unique_name_in_owner = true
+layout_mode = 2
+offset_left = 816.0
+offset_top = 6.0
+offset_right = 944.0
+offset_bottom = 166.0

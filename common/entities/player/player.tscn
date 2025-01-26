@@ -1,4 +1,4 @@
-[gd_scene load_steps=70 format=3 uid="uid://ble8ph76k1ad2"]
+[gd_scene load_steps=71 format=3 uid="uid://ble8ph76k1ad2"]
 
 [ext_resource type="Texture2D" uid="uid://beaipxxxyqqlx" path="res://assets/Belzebubble -Assets/Characters/Eyeden/DASH/dash.png" id="3_wdx5p"]
 [ext_resource type="Script" path="res://common/entities/player/player.gd" id="8"]
@@ -12,6 +12,7 @@
 [ext_resource type="Texture2D" uid="uid://cls2gkogjm6c3" path="res://assets/Wizard/Wizard_death_1.png" id="14"]
 [ext_resource type="Texture2D" uid="uid://ce8nqigmmjnw2" path="res://assets/Wizard/Wizard_death_0.png" id="15"]
 [ext_resource type="Texture2D" uid="uid://diy7w3rutvnvs" path="res://assets/Wizard/Wizard_death_5.png" id="16"]
+[ext_resource type="PackedScene" uid="uid://bk3uf1q28jt5w" path="res://common/entities/weapons/mop/mop.tscn" id="16_fthp1"]
 [ext_resource type="Texture2D" uid="uid://7d3sh66a0bej" path="res://assets/Wizard/Wizard_death_6.png" id="17"]
 [ext_resource type="Texture2D" uid="uid://b34a8ai04r4qy" path="res://assets/Wizard/Wizard_death_7.png" id="18"]
 [ext_resource type="PackedScene" uid="uid://cu6mupu6sae4k" path="res://common/entities/player_experience/player_experience.tscn" id="19_50iiu"]
@@ -651,10 +652,13 @@ autostart = true
 
 [node name="Timer_SB_Counter" type="Timer" parent="."]
 
+[node name="Weapons" type="Node2D" parent="."]
+
+[node name="Mop" parent="Weapons" instance=ExtResource("16_fthp1")]
+
 [connection signal="area_entered" from="Hurtbox" to="." method="_on_hurtbox_area_entered"]
 [connection signal="area_exited" from="Hurtbox" to="." method="_on_hurtbox_area_exited"]
 [connection signal="body_entered" from="Hurtbox" to="." method="_on_hurtbox_body_entered"]
 [connection signal="body_exited" from="Hurtbox" to="." method="_on_hurtbox_body_exited"]
-[connection signal="pause_game" from="Experience_Player" to="." method="_on_experience_player_pause_game"]
 [connection signal="timeout" from="Timer_SpawnBoss" to="." method="_on_timer_spawn_boss_timeout"]
 [connection signal="timeout" from="Timer_SB_Counter" to="." method="_on_timer_sb_counter_timeout"]

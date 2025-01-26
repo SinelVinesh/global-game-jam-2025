@@ -1,0 +1,109 @@
+[gd_scene load_steps=8 format=3 uid="uid://bbmhbfk6g1ldp"]
+
+[ext_resource type="Script" path="res://common/screens/upgrade_screen/upgrade_card/upgrade_card.gd" id="1_io4sa"]
+[ext_resource type="Texture2D" uid="uid://caiast4yvxbhv" path="res://assets/Card/cardAsset.png" id="1_ofnon"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_fcite"]
+atlas = ExtResource("1_ofnon")
+region = Rect2(8, 0, 114, 135)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_ofaww"]
+atlas = ExtResource("1_ofnon")
+region = Rect2(126, 216, 110, 40)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_i5qim"]
+atlas = ExtResource("1_ofnon")
+region = Rect2(612.895, 157.525, 95.168, 69.909)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_a45rd"]
+atlas = ExtResource("1_ofnon")
+region = Rect2(127, 136, 110, 80)
+
+[sub_resource type="LabelSettings" id="LabelSettings_j3que"]
+line_spacing = 1.0
+
+[node name="UpgradeCard" type="Control"]
+custom_minimum_size = Vector2(128, 160)
+layout_mode = 3
+anchors_preset = 0
+offset_right = 400.0
+offset_bottom = 498.0
+script = ExtResource("1_io4sa")
+
+[node name="CardMain" type="TextureRect" parent="."]
+texture_filter = 1
+layout_mode = 0
+offset_left = 1.0
+offset_top = 22.0
+offset_right = 115.0
+offset_bottom = 158.0
+scale = Vector2(3.5, 3.5)
+texture = SubResource("AtlasTexture_fcite")
+
+[node name="CardPlate" type="TextureRect" parent="."]
+texture_filter = 1
+layout_mode = 0
+offset_left = -4.0
+offset_top = 315.0
+offset_right = 106.0
+offset_bottom = 355.0
+scale = Vector2(3.5, 3.5)
+texture = SubResource("AtlasTexture_ofaww")
+
+[node name="CardImageFrameBg" type="TextureRect" parent="."]
+texture_filter = 1
+layout_mode = 0
+offset_left = 54.0
+offset_top = 62.0
+offset_right = 149.0
+offset_bottom = 131.0
+scale = Vector2(3.045, 3.5)
+texture = SubResource("AtlasTexture_i5qim")
+
+[node name="CardImageFrame" type="TextureRect" parent="."]
+texture_filter = 1
+layout_mode = 0
+offset_left = 1.0
+offset_top = 57.0
+offset_right = 111.0
+offset_bottom = 137.0
+scale = Vector2(3.5, 3.5)
+texture = SubResource("AtlasTexture_a45rd")
+
+[node name="Description" type="Label" parent="."]
+layout_mode = 0
+offset_left = 35.0
+offset_top = 350.0
+offset_right = 363.0
+offset_bottom = 436.0
+label_settings = SubResource("LabelSettings_j3que")
+horizontal_alignment = 1
+vertical_alignment = 1
+autowrap_mode = 2
+
+[node name="Card Illustration" type="TextureRect" parent="."]
+layout_mode = 0
+offset_left = 35.0
+offset_top = 56.0
+offset_right = 75.0
+offset_bottom = 96.0
+
+[node name="Title" type="RichTextLabel" parent="."]
+layout_mode = 0
+offset_left = 17.0
+offset_top = -32.0
+offset_right = 372.0
+offset_bottom = 64.0
+theme_override_font_sizes/normal_font_size = 24
+bbcode_enabled = true
+autowrap_mode = 2
+
+[node name="Button" type="Button" parent="."]
+modulate = Color(1, 1, 1, 0)
+layout_mode = 0
+offset_left = 17.0
+offset_top = 38.0
+offset_right = 381.0
+offset_bottom = 498.0
+
+[connection signal="button_up" from="Button" to="." method="_on_button_button_up"]

@@ -8,7 +8,7 @@ var experience_required = _get_experience_required(level + 1)
 var amount
 
 
-signal pause_game
+signal level_up
 
 
 # Called when the node enters the scene tree for the first time.
@@ -26,7 +26,8 @@ func _process(delta: float) -> void:
 
 #Get random experience required to level up
 func _get_experience_required(level):
-	return round (pow (level, 3) + level * 50)
+	# return round (pow (level, 3) + level * 50)
+	return round (pow (level, 0) + level * 1)
 
 
 #Handle experience gaining
@@ -41,4 +42,4 @@ func _gain_experience(amount):
 func _level_up():
 	level += 1
 	experience_required = _get_experience_required(level + 1)
-	emit_signal("pause_game")
+	UpgradeScreen.show_upgrade_screen(get_parent())

@@ -1,4 +1,4 @@
-extends Weapon
+class_name Mop extends Weapon
 
 var current_target: EnemyInRange
 

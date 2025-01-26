@@ -1,9 +1,7 @@
-[gd_scene load_steps=9 format=3 uid="uid://c5jjcxpjhpdlg"]
+[gd_scene load_steps=7 format=3 uid="uid://c5jjcxpjhpdlg"]
 
 [ext_resource type="Texture2D" uid="uid://cbibkckg2kmce" path="res://assets/Tileset Grass.png" id="1_wv8he"]
 [ext_resource type="PackedScene" uid="uid://ble8ph76k1ad2" path="res://common/entities/player/player.tscn" id="2_xelcb"]
-[ext_resource type="PackedScene" uid="uid://bk3uf1q28jt5w" path="res://common/entities/weapons/mop/mop.tscn" id="3_cjvnv"]
-[ext_resource type="PackedScene" uid="uid://n048w5n2316u" path="res://common/entities/weapons/nail_gun/nail_gun.tscn" id="3_jh1io"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_gx48d"]
 texture = ExtResource("1_wv8he")
@@ -4065,10 +4063,6 @@ layer_0/tile_data = PackedInt32Array(0, 524288, 0, 65536, 524288, 1, 131072, 524
 
 [node name="Player" parent="Node2D" instance=ExtResource("2_xelcb")]
 position = Vector2(640, 360)
-
-[node name="NailGun" parent="Node2D/Player" instance=ExtResource("3_jh1io")]
-
-[node name="Mop" parent="Node2D/Player" instance=ExtResource("3_cjvnv")]
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="."]
 libraries = {

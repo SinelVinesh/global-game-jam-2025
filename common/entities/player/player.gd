@@ -1,4 +1,4 @@
-extends Node2D
+class_name Player extends Node2D
 
 
 @export var speed_int = 10
@@ -6,7 +6,7 @@ extends Node2D
 @export var i_frames = 5
 @export var spawn_boss_time = 600
 
-var health
+var health := 0
 var damage_taken := 0
 var current_i_frames := 0
 
@@ -145,8 +145,9 @@ func _on_timer_sb_counter_timeout() -> void:
 func _update_boss_timer():
 	$PlayerCamera/Control_Player/Label_Timer_Boss.text = str(spawn_boss_time)
 
-#Pause game
-func _on_experience_player_pause_game() -> void:
-	pass # Replace with function body.
-	var game_scene_tree = get_tree()
-	game_scene_tree.paused = true
+func has_weapon(weapon) -> bool:
+	var children = $Weapons.get_children()
+	for child in children:
+		if is_instance_of(child, weapon):
+			return true
+	return false

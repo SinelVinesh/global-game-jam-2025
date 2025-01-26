@@ -28,7 +28,7 @@ func _ready() -> void:
 	$Range.body_exited.connect(_on_range_body_exited)
 	if $Hitbox:
 		$Hitbox.body_entered.connect(_on_hitbox_body_entered)
-	_player = get_parent()
+	_player = get_parent().get_parent()
 
 
 
