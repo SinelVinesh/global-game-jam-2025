@@ -1,6 +1,7 @@
-[gd_scene load_steps=3 format=3 uid="uid://c0ajfbr27rq71"]
+[gd_scene load_steps=4 format=3 uid="uid://c0ajfbr27rq71"]
 
 [ext_resource type="Script" path="res://common/screens/upgrade_screen/upgrade_screen.gd" id="1_eul3o"]
+[ext_resource type="FontFile" uid="uid://dpv4f3xr1lkt2" path="res://assets/font/Pixuf.ttf" id="2_dlcil"]
 [ext_resource type="PackedScene" uid="uid://bbmhbfk6g1ldp" path="res://common/screens/upgrade_screen/upgrade_card/upgrade_card.tscn" id="2_vlgx8"]
 
 [node name="upgrade_screen" type="CanvasLayer"]
@@ -36,9 +37,11 @@ layout_mode = 2
 [node name="RichTextLabel" type="RichTextLabel" parent="Control/MarginContainer/VBoxContainer"]
 custom_minimum_size = Vector2(0, 96)
 layout_mode = 2
+theme_override_fonts/normal_font = ExtResource("2_dlcil")
 theme_override_font_sizes/normal_font_size = 36
 bbcode_enabled = true
-text = "[wave freq=20][center] [rainbow sat=0.4 freq=0.1] IT'S TIME TO BUBBLE UP"
+text = "[wave freq=20][center] [rainbow sat=0.4 freq=0.1] 
+IT'S TIME TO BUBBLE UP"
 
 [node name="HBoxContainer" type="Control" parent="Control/MarginContainer/VBoxContainer"]
 custom_minimum_size = Vector2(0, 500)

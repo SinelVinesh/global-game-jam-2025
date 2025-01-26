@@ -1,16 +1,20 @@
-[gd_scene load_steps=5 format=3 uid="uid://dohj0q4m68fvr"]
+[gd_scene load_steps=6 format=3 uid="uid://dohj0q4m68fvr"]
 
 [ext_resource type="Script" path="res://levels/main_menu/main_menu.gd" id="1_llfsj"]
+[ext_resource type="FontFile" uid="uid://dpv4f3xr1lkt2" path="res://assets/font/Pixuf.ttf" id="2_767yi"]
 
 [sub_resource type="LabelSettings" id="LabelSettings_tfgng"]
+font = ExtResource("2_767yi")
 font_size = 72
 font_color = Color(1, 0.996078, 1, 1)
 
 [sub_resource type="LabelSettings" id="LabelSettings_o8mjo"]
+font = ExtResource("2_767yi")
 font_size = 32
 font_color = Color(1, 0.996078, 1, 1)
 
 [sub_resource type="LabelSettings" id="LabelSettings_7m7pg"]
+font = ExtResource("2_767yi")
 
 [node name="Control" type="Control"]
 layout_mode = 3
@@ -69,11 +73,13 @@ horizontal_alignment = 1
 
 [node name="PressAButton" type="RichTextLabel" parent="Background/MarginContainer/MenuContainer"]
 unique_name_in_owner = true
-custom_minimum_size = Vector2(0, 32)
+custom_minimum_size = Vector2(0, 64)
 layout_mode = 2
+theme_override_fonts/normal_font = ExtResource("2_767yi")
 theme_override_font_sizes/normal_font_size = 24
 bbcode_enabled = true
-text = "[center][wave amp=50]Press any button to start"
+text = "[center][wave amp=50]
+Press any button to start"
 fit_content = true
 scroll_active = false
 autowrap_mode = 0

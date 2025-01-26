@@ -7,6 +7,8 @@ func enter(_previous_state_path: String, _data := {}) -> void:
 	
 
 func physics_update(_delta: float) -> void:
+	if enemy.is_dead:
+		return
 	enemy.velocity = (enemy.player_position - enemy.position).normalized() * enemy.speed
 	enemy.move_and_slide()
 

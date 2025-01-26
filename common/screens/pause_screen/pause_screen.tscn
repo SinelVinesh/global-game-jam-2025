@@ -1,11 +1,13 @@
-[gd_scene load_steps=4 format=3 uid="uid://03skpyxt32fu"]
+[gd_scene load_steps=5 format=3 uid="uid://03skpyxt32fu"]
 
 [ext_resource type="Script" path="res://common/screens/pause_screen/pause_screen.gd" id="1_vu7sv"]
+[ext_resource type="FontFile" uid="uid://dpv4f3xr1lkt2" path="res://assets/font/Pixuf.ttf" id="2_kc0so"]
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_kmc5f"]
 bg_color = Color(0.101961, 0.0862745, 0.270588, 0.65098)
 
 [sub_resource type="LabelSettings" id="LabelSettings_8ijhw"]
+font = ExtResource("2_kc0so")
 font_size = 48
 font_color = Color(0.623529, 0.611765, 0.74902, 1)
 
@@ -65,6 +67,7 @@ theme_override_constants/separation = 16
 custom_minimum_size = Vector2(0, 43)
 layout_mode = 2
 size_flags_vertical = 4
+theme_override_fonts/font = ExtResource("2_kc0so")
 text = "Resume"
 flat = true
 
@@ -72,6 +75,7 @@ flat = true
 layout_mode = 2
 size_flags_horizontal = 4
 size_flags_vertical = 4
+theme_override_fonts/font = ExtResource("2_kc0so")
 text = "Exit"
 flat = true
 

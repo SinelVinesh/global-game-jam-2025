@@ -18,6 +18,7 @@ var health
 var player_position
 var damage_taken = 0
 var experience_point = 0
+var is_dead = false
 
 
 func _ready():
@@ -51,7 +52,9 @@ func _receive_damage():
 
 #Handle rexperience given to player
 func _give_experience():
+	is_dead = true
 	var player_owner = get_parent().get_node("Player")
 	var experience_gained = experience_point
 	player_owner.get_node("Experience_Player")._gain_experience(experience_gained)
+	AudioManager.play_sound(AudioManager.SoundType.DEAD_MOB)
 	animation_player.play("Death")

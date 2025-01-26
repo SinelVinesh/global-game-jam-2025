@@ -1,6 +1,6 @@
 [gd_scene load_steps=3 format=3 uid="uid://n048w5n2316u"]
 
-[ext_resource type="Script" path="res://common/entities/weapons/nail_gun/nail_gun.gd" id="1_fn51o"]
+[ext_resource type="Script" path="res://common/entities/weapons/towel_gun/towel_gun.gd" id="1_fn51o"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_5qsd8"]
 radius = 322.014

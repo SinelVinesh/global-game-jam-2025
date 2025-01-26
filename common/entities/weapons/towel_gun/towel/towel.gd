@@ -7,6 +7,7 @@ var _max_distance_travelled = 1000.0
 var _distance_travelled: float
 
 func _ready() -> void:
+	$AnimatedSprite2D.play("default")
 	self.body_entered.connect(_on_hitbox_body_entered)
 
 func init_bullet(damage: int, speed: int, direction: Vector2) -> void:
@@ -22,7 +23,6 @@ func _physics_process(_delta: float) -> void:
 		queue_free()
 
 func _on_hitbox_body_entered(body: Node) -> void:
-	print("Body entered: ", body)
 	if body.is_in_group("Hurtbox") and body is Enemy:
 		body.damage_taken = _damage
 		body._receive_damage()

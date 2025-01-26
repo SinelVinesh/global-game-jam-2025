@@ -1,19 +1,13 @@
-[gd_scene load_steps=70 format=3 uid="uid://ble8ph76k1ad2"]
+[gd_scene load_steps=64 format=3 uid="uid://ble8ph76k1ad2"]
 
 [ext_resource type="Texture2D" uid="uid://beaipxxxyqqlx" path="res://assets/Belzebubble -Assets/Characters/Eyeden/DASH/dash.png" id="3_wdx5p"]
+[ext_resource type="FontFile" uid="uid://dpv4f3xr1lkt2" path="res://assets/font/Pixuf.ttf" id="6_j7ev7"]
 [ext_resource type="Script" path="res://common/entities/player/player.gd" id="8"]
 [ext_resource type="Texture2D" uid="uid://d7p0yxryg777" path="res://assets/shadow.png" id="9"]
+[ext_resource type="PackedScene" uid="uid://n048w5n2316u" path="res://common/entities/weapons/towel_gun/towel_gun.tscn" id="9_51oav"]
 [ext_resource type="Texture2D" uid="uid://5eromldfsrvs" path="res://assets/Star.png" id="10"]
-[ext_resource type="Texture2D" uid="uid://d2w2xj3u0ymy8" path="res://assets/Wizard/Wizard_death_2.png" id="11"]
 [ext_resource type="Texture2D" uid="uid://xnvtldllwxwp" path="res://assets/Belzebubble -Assets/Characters/Eyeden/IDLE/base_idle.png" id="11_mfl8y"]
-[ext_resource type="Texture2D" uid="uid://b5nabpvjlts67" path="res://assets/Wizard/Wizard_death_3.png" id="12"]
-[ext_resource type="Texture2D" uid="uid://chujjq5oyxcf1" path="res://assets/Wizard/Wizard_death_4.png" id="13"]
 [ext_resource type="Texture2D" uid="uid://c18wfn3usfmr6" path="res://assets/Belzebubble -Assets/Characters/Eyeden/RUN/run.png" id="13_h7vko"]
-[ext_resource type="Texture2D" uid="uid://cls2gkogjm6c3" path="res://assets/Wizard/Wizard_death_1.png" id="14"]
-[ext_resource type="Texture2D" uid="uid://ce8nqigmmjnw2" path="res://assets/Wizard/Wizard_death_0.png" id="15"]
-[ext_resource type="Texture2D" uid="uid://diy7w3rutvnvs" path="res://assets/Wizard/Wizard_death_5.png" id="16"]
-[ext_resource type="Texture2D" uid="uid://7d3sh66a0bej" path="res://assets/Wizard/Wizard_death_6.png" id="17"]
-[ext_resource type="Texture2D" uid="uid://b34a8ai04r4qy" path="res://assets/Wizard/Wizard_death_7.png" id="18"]
 [ext_resource type="PackedScene" uid="uid://cu6mupu6sae4k" path="res://common/entities/player_experience/player_experience.tscn" id="19_50iiu"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_o1eyn"]
@@ -221,38 +215,6 @@ animations = [{
 }, {
 "frames": [{
 "duration": 1.0,
-"texture": ExtResource("15")
-}, {
-"duration": 1.0,
-"texture": ExtResource("15")
-}, {
-"duration": 1.0,
-"texture": ExtResource("14")
-}, {
-"duration": 1.0,
-"texture": ExtResource("11")
-}, {
-"duration": 1.0,
-"texture": ExtResource("12")
-}, {
-"duration": 1.0,
-"texture": ExtResource("13")
-}, {
-"duration": 1.0,
-"texture": ExtResource("16")
-}, {
-"duration": 1.0,
-"texture": ExtResource("17")
-}, {
-"duration": 1.0,
-"texture": ExtResource("18")
-}],
-"loop": false,
-"name": &"Death",
-"speed": 5.0
-}, {
-"frames": [{
-"duration": 1.0,
 "texture": SubResource("AtlasTexture_otq12")
 }, {
 "duration": 1.0,
@@ -347,8 +309,8 @@ animations = [{
 }]
 
 [sub_resource type="CapsuleShape2D" id="2"]
-radius = 21.0
-height = 42.0
+radius = 25.0
+height = 98.0
 
 [sub_resource type="Animation" id="7"]
 resource_name = "Spawn"
@@ -423,37 +385,13 @@ _data = {
 [sub_resource type="Animation" id="9"]
 resource_name = "Death"
 length = 2.5
-tracks/0/type = "value"
+tracks/0/type = "method"
 tracks/0/imported = false
 tracks/0/enabled = true
-tracks/0/path = NodePath("AnimatedSprite2D:position")
+tracks/0/path = NodePath(".")
 tracks/0/interp = 1
 tracks/0/loop_wrap = true
 tracks/0/keys = {
-"times": PackedFloat32Array(0),
-"transitions": PackedFloat32Array(1),
-"update": 0,
-"values": [Vector2(-35, -114)]
-}
-tracks/1/type = "value"
-tracks/1/imported = false
-tracks/1/enabled = true
-tracks/1/path = NodePath("AnimatedSprite2D:animation")
-tracks/1/interp = 1
-tracks/1/loop_wrap = true
-tracks/1/keys = {
-"times": PackedFloat32Array(0),
-"transitions": PackedFloat32Array(1),
-"update": 1,
-"values": ["Death"]
-}
-tracks/2/type = "method"
-tracks/2/imported = false
-tracks/2/enabled = true
-tracks/2/path = NodePath(".")
-tracks/2/interp = 1
-tracks/2/loop_wrap = true
-tracks/2/keys = {
 "times": PackedFloat32Array(0, 2.5),
 "transitions": PackedFloat32Array(1, 1),
 "values": [{
@@ -464,40 +402,28 @@ tracks/2/keys = {
 "method": &"restart_game"
 }]
 }
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("AnimatedSprite2D:modulate")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0, 0.5, 1.5),
+"transitions": PackedFloat32Array(1, 1, 1),
+"update": 0,
+"values": [Color(1, 1, 1, 1), Color(0.73, 0.0480583, 0.0365, 0.643137), Color(1, 0.1, 0.1, 0)]
+}
 
 [sub_resource type="Animation" id="10"]
 length = 0.001
 tracks/0/type = "value"
 tracks/0/imported = false
 tracks/0/enabled = true
-tracks/0/path = NodePath("AnimatedSprite2D:position")
+tracks/0/path = NodePath("AnimatedSprite2D:modulate")
 tracks/0/interp = 1
 tracks/0/loop_wrap = true
 tracks/0/keys = {
-"times": PackedFloat32Array(0),
-"transitions": PackedFloat32Array(1),
-"update": 0,
-"values": [Vector2(-1, -52)]
-}
-tracks/1/type = "value"
-tracks/1/imported = false
-tracks/1/enabled = true
-tracks/1/path = NodePath("AnimatedSprite2D:animation")
-tracks/1/interp = 1
-tracks/1/loop_wrap = true
-tracks/1/keys = {
-"times": PackedFloat32Array(0),
-"transitions": PackedFloat32Array(1),
-"update": 0,
-"values": ["default"]
-}
-tracks/2/type = "value"
-tracks/2/imported = false
-tracks/2/enabled = true
-tracks/2/path = NodePath("AnimatedSprite2D:modulate")
-tracks/2/interp = 1
-tracks/2/loop_wrap = true
-tracks/2/keys = {
 "times": PackedFloat32Array(0),
 "transitions": PackedFloat32Array(1),
 "update": 0,
@@ -533,7 +459,7 @@ _data = {
 
 [node name="Player" type="Node2D" groups=["Player"]]
 script = ExtResource("8")
-spawn_boss_time = 300
+spawn_boss_time = 10
 
 [node name="Shadow" type="Sprite2D" parent="."]
 modulate = Color(1, 1, 1, 0.4)
@@ -544,32 +470,25 @@ texture = ExtResource("9")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
 texture_filter = 1
-position = Vector2(-1, -52)
+position = Vector2(-1, -61)
 scale = Vector2(4, 4)
 sprite_frames = SubResource("1")
+animation = &"Idle"
 
 [node name="Hurtbox" type="Area2D" parent="."]
 collision_mask = 2
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Hurtbox"]
-position = Vector2(0, -32)
+position = Vector2(0, -57)
 shape = SubResource("2")
 
 [node name="PlayerCamera" type="Camera2D" parent="."]
 unique_name_in_owner = true
 zoom = Vector2(0.75, 0.75)
 
-[node name="Control_Player" type="Control" parent="PlayerCamera"]
-custom_minimum_size = Vector2(1280, 720)
-layout_mode = 3
-anchors_preset = 0
-offset_left = -641.0
-offset_top = -357.0
-offset_right = 639.0
-offset_bottom = 363.0
+[node name="Control_Player" type="CanvasLayer" parent="PlayerCamera"]
 
 [node name="ProgressBar_Health" type="ProgressBar" parent="PlayerCamera/Control_Player"]
-layout_mode = 0
 offset_left = 90.0
 offset_top = 21.0
 offset_right = 390.0
@@ -578,26 +497,25 @@ rounded = true
 show_percentage = false
 
 [node name="Label_HP_Text" type="Label" parent="PlayerCamera/Control_Player"]
-layout_mode = 0
-offset_left = 31.0
-offset_top = 23.0
-offset_right = 71.0
-offset_bottom = 46.0
-text = "HP"
+offset_left = 32.0
+offset_top = 29.0
+offset_right = 78.0
+offset_bottom = 52.0
+theme_override_fonts/font = ExtResource("6_j7ev7")
+text = "Health"
 
 [node name="Label_Timer_Boss" type="Label" parent="PlayerCamera/Control_Player"]
-layout_mode = 0
-offset_left = 1112.0
-offset_top = -3.0
-offset_right = 1140.0
-offset_bottom = 20.0
-scale = Vector2(5, 5)
+offset_left = 1124.0
+offset_top = 16.0
+offset_right = 1220.0
+offset_bottom = 72.0
+theme_override_fonts/font = ExtResource("6_j7ev7")
+theme_override_font_sizes/font_size = 64
 text = "000
 "
 
 [node name="Label_SpawnBoss_Text" type="Label" parent="PlayerCamera/Control_Player"]
 modulate = Color(1, 0, 0, 1)
-layout_mode = 0
 offset_left = 221.0
 offset_top = 293.0
 offset_right = 390.0
@@ -606,6 +524,12 @@ scale = Vector2(5, 5)
 theme_override_colors/font_outline_color = Color(0, 0, 0, 0.498039)
 theme_override_constants/outline_size = 5
 text = "Calamity approaching"
+
+[node name="HBoxContainer" type="HBoxContainer" parent="PlayerCamera/Control_Player"]
+offset_left = 88.0
+offset_top = 14.0
+offset_right = 128.0
+offset_bottom = 54.0
 
 [node name="SpawnAnimationPlayer" type="AnimationPlayer" parent="."]
 libraries = {
@@ -633,28 +557,25 @@ libraries = {
 }
 
 [node name="Experience_Player" parent="." instance=ExtResource("19_50iiu")]
-offset_left = -123.0
-offset_top = -354.0
-offset_right = -123.0
-offset_bottom = -354.0
 
 [node name="HitAnimationPlayer" type="AnimationPlayer" parent="."]
 libraries = {
 "": SubResource("AnimationLibrary_fecvm")
 }
 
-[node name="Timer_SpawnBoss" type="Timer" parent="."]
-wait_time = 180.0
+[node name="DashTimer" type="Timer" parent="."]
+wait_time = 0.5
 one_shot = true
-autostart = true
 
 [node name="Timer_SB_Counter" type="Timer" parent="."]
 
 [node name="Weapons" type="Node2D" parent="."]
 
+[node name="NailGun" parent="Weapons" instance=ExtResource("9_51oav")]
+
 [connection signal="area_entered" from="Hurtbox" to="." method="_on_hurtbox_area_entered"]
 [connection signal="area_exited" from="Hurtbox" to="." method="_on_hurtbox_area_exited"]
 [connection signal="body_entered" from="Hurtbox" to="." method="_on_hurtbox_body_entered"]
 [connection signal="body_exited" from="Hurtbox" to="." method="_on_hurtbox_body_exited"]
-[connection signal="timeout" from="Timer_SpawnBoss" to="." method="_on_timer_spawn_boss_timeout"]
+[connection signal="timeout" from="DashTimer" to="." method="_on_dash_finished"]
 [connection signal="timeout" from="Timer_SB_Counter" to="." method="_on_timer_sb_counter_timeout"]

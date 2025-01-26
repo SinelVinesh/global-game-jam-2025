@@ -1,0 +1,7 @@
+[gd_resource type="LabelSettings" load_steps=2 format=3 uid="uid://cmbhe88x7xksl"]
+
+[ext_resource type="FontFile" uid="uid://dpv4f3xr1lkt2" path="res://assets/font/Pixuf.ttf" id="1_bqwml"]
+
+[resource]
+font = ExtResource("1_bqwml")
+font_size = 24

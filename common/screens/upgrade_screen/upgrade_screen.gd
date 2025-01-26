@@ -11,10 +11,10 @@ enum UPGRADE {
 	MOP_RANGE_UP,
 	MOP_ATTACK_SPEED_UP,
 	# Nail gun upgrades
-	ADD_WEAPON_NAIL_GUN,
-	NAIL_GUN_DAMAGE_UP,
-	NAIL_GUN_RANGE_UP,
-	NAIL_GUN_ATTACK_SPEED_UP,
+	ADD_WEAPON_TOWEL,
+	TOWEL_DAMAGE_UP,
+	TOWEL_RANGE_UP,
+	TOWEL_ATTACK_SPEED_UP,
 }
 
 class Upgrade: 
@@ -33,13 +33,13 @@ var upgrade_list: Array[Upgrade] = [
 	Upgrade.init(UPGRADE.HEALTH_UP, "Open your eyes !", "Increase player health and reset health to max"),
 	Upgrade.init(UPGRADE.SPEED_UP, "Faster than light !", "Increase player speed"),
 	Upgrade.init(UPGRADE.ADD_WEAPON_MOP, "Mop the flooor", "Add a mop weapon to the player"),
-	Upgrade.init(UPGRADE.MOP_DAMAGE_UP, "More soaaap ", "Increase mop damage"),
-	Upgrade.init(UPGRADE.MOP_RANGE_UP, "Clean their heart", "Increase mop range"),
+	Upgrade.init(UPGRADE.MOP_DAMAGE_UP, "More soaaap ", "Increase mops damage"),
+	Upgrade.init(UPGRADE.MOP_RANGE_UP, "Streeeeeaching", "Increase mops range"),
 	Upgrade.init(UPGRADE.MOP_ATTACK_SPEED_UP, "Quicker Janitor !", "Increase mop attack speed"),
-	Upgrade.init(UPGRADE.ADD_WEAPON_NAIL_GUN, "POP THEM !", "Add a nail gun weapon to the player"),
-	Upgrade.init(UPGRADE.NAIL_GUN_DAMAGE_UP, "The nail !", "Increase nail gun damage"),
-	Upgrade.init(UPGRADE.NAIL_GUN_RANGE_UP, "You nailed it !", "Increase nail gun range"),
-	Upgrade.init(UPGRADE.NAIL_GUN_ATTACK_SPEED_UP, "COFFEE", "Increase nail gun attack speed"),
+	Upgrade.init(UPGRADE.ADD_WEAPON_TOWEL, "The Towel !", "Throw a towel at your enemies"),
+	Upgrade.init(UPGRADE.TOWEL_DAMAGE_UP, "Twist it <3", "Increase towels damage"),
+	Upgrade.init(UPGRADE.TOWEL_RANGE_UP, "3 points !", "Increase towels range"),
+	Upgrade.init(UPGRADE.TOWEL_ATTACK_SPEED_UP, "It's wet !", "Increase towels attack speed"),
 ]
 
 var _player : Player
@@ -68,10 +68,10 @@ func show_upgrade_screen(player: Player):
 		excluded_upgrades.push_back(UPGRADE.MOP_DAMAGE_UP)
 		excluded_upgrades.push_back(UPGRADE.MOP_RANGE_UP)
 		excluded_upgrades.push_back(UPGRADE.MOP_ATTACK_SPEED_UP)
-	if !_player.has_weapon(NailGun):
-		excluded_upgrades.push_back(UPGRADE.NAIL_GUN_DAMAGE_UP)
-		excluded_upgrades.push_back(UPGRADE.NAIL_GUN_RANGE_UP)
-		excluded_upgrades.push_back(UPGRADE.NAIL_GUN_ATTACK_SPEED_UP)
+	if !_player.has_weapon(Towel):
+		excluded_upgrades.push_back(UPGRADE.TOWEL_DAMAGE_UP)
+		excluded_upgrades.push_back(UPGRADE.TOWEL_RANGE_UP)
+		excluded_upgrades.push_back(UPGRADE.TOWEL_ATTACK_SPEED_UP)
 	# Get 3 random exclusive upgrades
 	var available_upgrades = upgrade_list.duplicate()
 	available_upgrades = available_upgrades.filter(func (upgrade: Upgrade): return !excluded_upgrades.has(upgrade.type))
@@ -89,12 +89,11 @@ func _update_upgrade_ui():
 	_update_ui_for_card(upgrade_3, proposed_upgrades[2])
 
 func _update_ui_for_card(card: Control, upgrade: Upgrade):
-	card.get_node("Title").text = "[wave amp=80 freq=5][center]" + upgrade.name
+	card.get_node("Title").text = "[wave amp=80 freq=5][center]\n" + upgrade.name
 	card.get_node("Description").text = upgrade.description
 	card.upgrade = upgrade
 
 func select_upgrade(upgrade: Upgrade):
-	print("upgrade_selected : ", upgrade.type)
 	proposed_upgrades.clear()
 	hide()
 	get_tree().paused = false
@@ -112,11 +111,11 @@ func select_upgrade(upgrade: Upgrade):
 			_player.update_weapon_range(Mop, 1.5)
 		UPGRADE.MOP_ATTACK_SPEED_UP:
 			_player.update_weapon_delay(Mop, 0.5)
-		UPGRADE.ADD_WEAPON_NAIL_GUN:
-			_player.add_weapon(NailGun)
-		UPGRADE.NAIL_GUN_DAMAGE_UP:
-			_player.update_weapon_damage(NailGun, 10)
-		UPGRADE.NAIL_GUN_RANGE_UP:
-			_player.update_weapon_range(NailGun, 1.5)
-		UPGRADE.NAIL_GUN_ATTACK_SPEED_UP:
-			_player.update_weapon_delay(NailGun, 0.5)
+		UPGRADE.ADD_WEAPON_TOWEL:
+			_player.add_weapon(Towel)
+		UPGRADE.TOWEL_DAMAGE_UP:
+			_player.update_weapon_damage(Towel, 10)
+		UPGRADE.TOWEL_RANGE_UP:
+			_player.update_weapon_range(Towel, 1.5)
+		UPGRADE.TOWEL_ATTACK_SPEED_UP:
+			_player.update_weapon_delay(Towel, 0.5)

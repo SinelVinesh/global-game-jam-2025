@@ -1,6 +1,6 @@
 extends Area2D
 
-var _damage: int 
+var damage: int 
 var _destination: Vector2
 var _velocity: Vector2
 var _delay: float
@@ -11,8 +11,8 @@ var _teleport = false
 func _on_timer_timeout() -> void:
 	queue_free()
 
-func init_bullet(damage: int, destination: Vector2, delay: float, teleport: bool) -> void:
-	_damage = damage
+func init_bullet(init_damage: int, destination: Vector2, delay: float, teleport: bool) -> void:
+	damage = init_damage
 	_delay = delay
 	_destination = destination
 	_velocity = (_destination - global_position).normalized() * 700

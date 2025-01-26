@@ -1,7 +1,8 @@
-[gd_scene load_steps=8 format=3 uid="uid://bbmhbfk6g1ldp"]
+[gd_scene load_steps=9 format=3 uid="uid://bbmhbfk6g1ldp"]
 
 [ext_resource type="Script" path="res://common/screens/upgrade_screen/upgrade_card/upgrade_card.gd" id="1_io4sa"]
 [ext_resource type="Texture2D" uid="uid://caiast4yvxbhv" path="res://assets/Card/cardAsset.png" id="1_ofnon"]
+[ext_resource type="FontFile" uid="uid://dpv4f3xr1lkt2" path="res://assets/font/Pixuf.ttf" id="3_ullrn"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_fcite"]
 atlas = ExtResource("1_ofnon")
@@ -21,6 +22,7 @@ region = Rect2(127, 136, 110, 80)
 
 [sub_resource type="LabelSettings" id="LabelSettings_j3que"]
 line_spacing = 1.0
+font = ExtResource("3_ullrn")
 
 [node name="UpgradeCard" type="Control"]
 custom_minimum_size = Vector2(128, 160)
@@ -94,6 +96,7 @@ offset_left = 17.0
 offset_top = -32.0
 offset_right = 372.0
 offset_bottom = 64.0
+theme_override_fonts/normal_font = ExtResource("3_ullrn")
 theme_override_font_sizes/normal_font_size = 24
 bbcode_enabled = true
 autowrap_mode = 2

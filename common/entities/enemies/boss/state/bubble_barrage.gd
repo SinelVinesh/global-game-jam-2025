@@ -5,7 +5,7 @@ func enter(_previous_state_path: String, _data := {}) -> void:
 	# We will spwan 5 bubbles
 	var loaded_bubble = load("res://common/entities/enemies/boss/boss_bullet/boss_bullet.tscn")
 	for i in range(5):
-		var initial_bubble_pos = enemy.player_position + (enemy.global_position - enemy.player_position).normalized() * 200
+		var initial_bubble_pos = enemy.player_position + (enemy.global_position - enemy.player_position).normalized() * 100
 		initial_bubble_pos = initial_bubble_pos - enemy.player_position
 		var bubble = loaded_bubble.instantiate() 
 		get_parent().add_child(bubble)

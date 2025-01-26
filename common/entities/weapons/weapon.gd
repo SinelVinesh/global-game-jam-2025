@@ -60,6 +60,7 @@ func _on_range_body_entered(body: Node) -> void:
 func _on_range_body_exited(body: Node) -> void:
 	for enemy in _enemies_in_range:
 		if enemy.enemy == body:
+			enemy.in_range_of.erase(self)
 			_enemies_in_range.erase(enemy)
 			break
 
@@ -79,10 +80,10 @@ func get_nearest_untargeted_enemy(weapon: Weapon, current_target: EnemyInRange) 
 					result = enemy
 			else :
 				result = enemy
-		if not enemy.targeted:
-			enemy.targeted = true
-			result = enemy
-			break
+			if not enemy.targeted:
+				enemy.targeted = true
+				result = enemy
+				break
 	return result
 
 func set_weapon_damage(damage: int) -> void:
@@ -93,5 +94,4 @@ func set_weapon_delay(factor: float) -> void:
 
 func set_weapon_range(factor: float) -> void:
 	_range = factor
-	print("range", $Range.transform)
 	$Range.scale = Vector2(_range, _range)

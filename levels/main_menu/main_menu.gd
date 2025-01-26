@@ -1,7 +1,10 @@
 extends Control
 
+var game_launched = false
+
 func _input(event: InputEvent) -> void:
-	if event is InputEventKey and event.pressed:
+	if event is InputEventKey and event.pressed and not game_launched:
+		game_launched = true 
 		%PressAButton.hide()
 		$StartGameSound.play()
 		TransitionScreen.transition()

@@ -1,6 +1,6 @@
-class_name NailGun extends Weapon
+class_name TowelGun extends Weapon
 
-@onready var nail_gun_bullet = preload("res://common/entities/weapons/nail_gun/nail_gun_bullet/nail_gun_bullet.tscn")
+@onready var towel_bullet = preload("res://common/entities/weapons/towel_gun/towel/towel.tscn")
 @export var initial_speed : int = 1000
 
 var _speed
@@ -16,6 +16,6 @@ func _attack() -> void :
 			return
 		var enemy_position = current_target.enemy.global_position
 		var direction = _player.global_position.direction_to(enemy_position)
-		var bullet_instance = nail_gun_bullet.instantiate()
+		var bullet_instance = towel_bullet.instantiate()
 		get_parent().add_child(bullet_instance)
 		bullet_instance.init_bullet(_damage, _speed, direction)

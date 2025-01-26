@@ -1,0 +1,25 @@
+[gd_scene load_steps=3 format=3 uid="uid://bc1qx5gjosd2h"]
+
+[ext_resource type="Script" path="res://common/audio_manager/audio_manager.gd" id="1_2k5nd"]
+[ext_resource type="AudioStream" uid="uid://cg40t4x8fptab" path="res://assets/SFX/Bubble popping 2.mp3" id="1_bu51o"]
+
+[node name="AudioManager" type="Node"]
+process_mode = 3
+script = ExtResource("1_2k5nd")
+
+[node name="BackgroundTheme" type="AudioStreamPlayer2D" parent="."]
+autoplay = true
+
+[node name="StartGameSound" type="AudioStreamPlayer2D" parent="."]
+
+[node name="DeadMob" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource("1_bu51o")
+volume_db = -10.0
+
+[node name="SelectSound" type="AudioStreamPlayer2D" parent="."]
+
+[node name="CollisionSound" type="AudioStreamPlayer2D" parent="."]
+
+[node name="GoalSound" type="AudioStreamPlayer2D" parent="."]
+
+[node name="ShowMenu" type="AudioStreamPlayer2D" parent="."]

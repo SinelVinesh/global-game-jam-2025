@@ -12,8 +12,8 @@ func _attack() -> void:
 		var direction = _player.global_position.direction_to(enemy_position)
 		var rotation = direction.angle_to(Vector2.UP)
 		self.rotation -= PI/2 + rotation
-		print("Direction to enemy: ", direction)
-		print("Rotation :", rad_to_deg(rotation), " deg")
 		$AnimationPlayer.play("Attack")
 		await $AnimationPlayer.animation_finished
+		_delay += 1
 		self.rotation = 0
+	_active = false

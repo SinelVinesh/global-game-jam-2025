@@ -1,6 +1,99 @@
-[gd_scene load_steps=7 format=3 uid="uid://bk3uf1q28jt5w"]
+[gd_scene load_steps=21 format=3 uid="uid://bk3uf1q28jt5w"]
 
 [ext_resource type="Script" path="res://common/entities/weapons/mop/mop.gd" id="1_mi04m"]
+[ext_resource type="Texture2D" uid="uid://cvavm8lr0mjxn" path="res://assets/Belzebubble -Assets/Weapons/Mop/mop_attack.png" id="2_vj6ex"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_8quag"]
+atlas = ExtResource("2_vj6ex")
+region = Rect2(0, 0, 64, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_yhk7s"]
+atlas = ExtResource("2_vj6ex")
+region = Rect2(64, 0, 64, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_7talq"]
+atlas = ExtResource("2_vj6ex")
+region = Rect2(128, 0, 64, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_sut3r"]
+atlas = ExtResource("2_vj6ex")
+region = Rect2(192, 0, 64, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_4r2q2"]
+atlas = ExtResource("2_vj6ex")
+region = Rect2(256, 0, 64, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_dab6s"]
+atlas = ExtResource("2_vj6ex")
+region = Rect2(320, 0, 64, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_b73g7"]
+atlas = ExtResource("2_vj6ex")
+region = Rect2(384, 0, 64, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_jgj5p"]
+atlas = ExtResource("2_vj6ex")
+region = Rect2(448, 0, 64, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_wg53f"]
+atlas = ExtResource("2_vj6ex")
+region = Rect2(512, 0, 64, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_3nnqq"]
+atlas = ExtResource("2_vj6ex")
+region = Rect2(576, 0, 64, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_agwmo"]
+atlas = ExtResource("2_vj6ex")
+region = Rect2(640, 0, 64, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_r8ggc"]
+atlas = ExtResource("2_vj6ex")
+region = Rect2(704, 0, 64, 64)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_ebbgx"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_8quag")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_yhk7s")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_7talq")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_sut3r")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_4r2q2")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_dab6s")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_b73g7")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_jgj5p")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_wg53f")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_3nnqq")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_agwmo")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_r8ggc")
+}],
+"loop": true,
+"name": &"attack",
+"speed": 5.0
+}]
 
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_26myp"]
 radius = 11.0
@@ -8,6 +101,7 @@ height = 204.0
 
 [sub_resource type="Animation" id="Animation_7h3oo"]
 resource_name = "Attack"
+length = 0.9
 tracks/0/type = "value"
 tracks/0/imported = false
 tracks/0/enabled = true
@@ -15,10 +109,22 @@ tracks/0/path = NodePath("Hitbox:rotation")
 tracks/0/interp = 2
 tracks/0/loop_wrap = true
 tracks/0/keys = {
-"times": PackedFloat32Array(0, 1),
-"transitions": PackedFloat32Array(0.366021, 0.203063),
+"times": PackedFloat32Array(0, 0.133333, 0.866667),
+"transitions": PackedFloat32Array(0.366021, 0.366021, 0.203063),
 "update": 0,
-"values": [0.0, 3.14159]
+"values": [1.5708, 0.0, 3.14159]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("AnimatedSprite2D:frame")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0, 0.0666667, 0.133333, 0.2, 0.266667, 0.333333, 0.4, 0.466667, 0.533333, 0.6, 0.666667, 0.733333, 0.8),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1),
+"update": 1,
+"values": [0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 11]
 }
 
 [sub_resource type="Animation" id="Animation_exo7i"]
@@ -35,6 +141,18 @@ tracks/0/keys = {
 "update": 0,
 "values": [0.0]
 }
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("AnimatedSprite2D:frame")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [0]
+}
 
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_ltmdj"]
 _data = {
@@ -48,6 +166,13 @@ radius = 188.011
 [node name="Mop" type="Node2D"]
 position = Vector2(0, 1)
 script = ExtResource("1_mi04m")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+texture_filter = 1
+position = Vector2(1, -47)
+scale = Vector2(7, 7)
+sprite_frames = SubResource("SpriteFrames_ebbgx")
+animation = &"attack"
 
 [node name="Hitbox" type="Area2D" parent="."]
 collision_layer = 0

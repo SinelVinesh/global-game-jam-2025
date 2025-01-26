@@ -8,8 +8,6 @@ func enter(_previous_state_path: String, _data := {}) -> void:
 	# Calculate the destination of the dash
 	dash_destination = enemy.global_position + (enemy.global_position - enemy.player_position).normalized() * 1500
 	enemy.speed = dash_speed
-	print("Enemy position: ", enemy.global_position)
-	print("Dash destination: ", dash_destination)
 	active_dash = true
 	
 func physics_update(_delta: float) -> void:
