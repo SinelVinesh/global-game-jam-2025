@@ -191,7 +191,7 @@ func add_weapon(weapon) -> void:
 		var weapon_instance = load("res://common/entities/weapons/mop/mop.tscn").instantiate()
 		$Weapons.add_child(weapon_instance)
 	elif weapon == Towel:
-		var weapon_instance = load("res://common/entities/weapons/nail_gun/nail_gun.tscn").instantiate()
+		var weapon_instance = load("res://common/entities/weapons/towel_gun/towel_gun.tscn").instantiate()
 		$Weapons.add_child(weapon_instance)
 
 func update_weapon_damage(weapon, amount: int) -> void:

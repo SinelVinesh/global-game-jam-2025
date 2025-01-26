@@ -6,6 +6,7 @@ var active_dash = false
 
 func enter(_previous_state_path: String, _data := {}) -> void:
 	# Calculate the destination of the dash
+	enemy.animated_sprite.play("dash")
 	dash_destination = enemy.global_position + (enemy.global_position - enemy.player_position).normalized() * 1500
 	enemy.speed = dash_speed
 	active_dash = true
