@@ -44,7 +44,7 @@ func _receive_damage():
 	health -= damage_taken
 	_update_health_ui()
 	if health <= 0:
-		animation_player.play("Death")
+		_give_experience()
 	else:
 		animation_player.play("Enemy_Hit")
 
@@ -54,4 +54,4 @@ func _give_experience():
 	var player_owner = get_parent().get_node("Player")
 	var experience_gained = experience_point
 	player_owner.get_node("Experience_Player")._gain_experience(experience_gained)
-	animation_player.play("Enemy_Hit")
+	animation_player.play("Death")

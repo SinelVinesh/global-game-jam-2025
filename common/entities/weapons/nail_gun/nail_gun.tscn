@@ -1,0 +1,18 @@
+[gd_scene load_steps=3 format=3 uid="uid://n048w5n2316u"]
+
+[ext_resource type="Script" path="res://common/entities/weapons/nail_gun/nail_gun.gd" id="1_fn51o"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_5qsd8"]
+radius = 322.014
+
+[node name="NailGun" type="Node2D"]
+script = ExtResource("1_fn51o")
+initial_damage = 15
+
+[node name="Range" type="Area2D" parent="."]
+collision_layer = 0
+collision_mask = 2
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Range"]
+shape = SubResource("CircleShape2D_5qsd8")
+debug_color = Color(0.676272, 0.50588, 1.92523e-07, 0.42)

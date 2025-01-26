@@ -56,7 +56,7 @@ func _physics_process(delta):
 		$AnimatedSprite2D.play("Idle")
 	else:
 		if speed_int == 10:
-			$AnimatedSprite2D.play("default")
+			$AnimatedSprite2D.play("walk")
 		else:
 			$AnimatedSprite2D.play("Dash")
 
@@ -69,10 +69,6 @@ func _physics_process(delta):
 
 	if is_hit:
 		_hit_animation()
-
-
-#Shoot bullet automatically
-func shoot(): add_child(load("res://common/entities/bullet/bullet.tscn").instantiate())
 
 
 #Spawn ennemies automatically
