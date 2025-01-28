@@ -1,19 +1,9 @@
-# 10LOCSurvivors
-This is a Vampire Survivors-like made in Godot Engine using only 10 lines of GDSCript code.
-Here's the YouTube video showing how we came up with it:
+# Eye Contact : Belzebubble's attack
+This is a Vampire Survivors-like made in Godot Engine forked on the 10LOCSurvivors projet. It's a project made for the Global Game Jam 2025.
 
-[![](https://img.youtube.com/vi/LgvLbahJOTA/hqdefault.jpg)](https://youtu.be/LgvLbahJOTA)
+## Synopsis
+Belzebubble has returned to Earth with his minions with the goal of putting soap in everyone's eyes. But since he's not that great of a villain, we're sending you, Eye-den, to handle the problem. 
+In this survivor-like, defeat the evils bubbles to save to world 
 
-You can play the game on itch.io: https://playwithfurcifer.itch.io/10-loc-survivors
-
-
-
-Credits:
-
-Godot: https://godotengine.org/
-
-Skeleton sprite: https://luizmelo.itch.io/monsters-creatures-fantasy
-
-Wizard sprite: https://hajileee.itch.io/hajileees-fantasy-characters-pack-magic-set
-
-Tileset: https://cainos.itch.io/pixel-art-top-down-basic
+## Installation
+You can play the game on itch.io: https://masoandro.itch.io/eye-contact-belzebubbles-attack-global-game-jam-2025
