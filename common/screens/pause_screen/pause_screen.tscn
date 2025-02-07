@@ -71,19 +71,9 @@ theme_override_fonts/font = ExtResource("2_kc0so")
 text = "Resume"
 flat = true
 
-[node name="QuitButton" type="Button" parent="Control/Panel/VBoxContainer/VBoxContainer"]
-layout_mode = 2
-size_flags_horizontal = 4
-size_flags_vertical = 4
-theme_override_fonts/font = ExtResource("2_kc0so")
-text = "Exit"
-flat = true
-
 [node name="HoverSound" type="AudioStreamPlayer2D" parent="."]
 
 [node name="SelectSound" type="AudioStreamPlayer2D" parent="."]
 
 [connection signal="button_down" from="Control/Panel/VBoxContainer/VBoxContainer/ResumeButton" to="." method="_on_resume_button_button_down"]
 [connection signal="mouse_entered" from="Control/Panel/VBoxContainer/VBoxContainer/ResumeButton" to="." method="_on_button_hover"]
-[connection signal="mouse_entered" from="Control/Panel/VBoxContainer/VBoxContainer/QuitButton" to="." method="_on_button_hover"]
-[connection signal="pressed" from="Control/Panel/VBoxContainer/VBoxContainer/QuitButton" to="." method="_on_quit_button_pressed"]

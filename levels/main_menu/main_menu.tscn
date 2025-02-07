@@ -85,12 +85,18 @@ scroll_active = false
 autowrap_mode = 0
 
 [node name="MarginContainer2" type="MarginContainer" parent="Background"]
-layout_mode = 2
-offset_left = 420.0
-offset_top = 595.0
-offset_right = 861.0
-offset_bottom = 698.0
-theme_override_constants/margin_top = 80
+layout_mode = 1
+anchors_preset = 7
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+offset_left = -220.5
+offset_top = -103.0
+offset_right = 220.5
+grow_horizontal = 2
+grow_vertical = 0
+theme_override_constants/margin_top = 40
 
 [node name="Credits" type="Label" parent="Background/MarginContainer2"]
 layout_mode = 2

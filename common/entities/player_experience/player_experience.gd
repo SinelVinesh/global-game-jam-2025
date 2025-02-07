@@ -19,9 +19,9 @@ func _ready() -> void:
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta: float) -> void:
 	pass
-	$Label_Experience.text = str(experience)
-	$Label_Experience_required.text = str(experience_required)
-	$Label_Level.text = str (level)
+	%Label_Experience.text = str(experience)
+	%Label_Experience_required.text = str(experience_required)
+	%Label_Level.text = str (level)
 
 
 #Get random experience required to level up

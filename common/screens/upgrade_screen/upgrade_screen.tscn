@@ -48,27 +48,29 @@ IT'S TIME TO BUBBLE UP"
 [node name="HBoxContainer" type="Control" parent="Control/MarginContainer/VBoxContainer"]
 custom_minimum_size = Vector2(0, 500)
 layout_mode = 2
+size_flags_vertical = 4
 
 [node name="Upgrade1" parent="Control/MarginContainer/VBoxContainer/HBoxContainer" instance=ExtResource("2_vlgx8")]
 unique_name_in_owner = true
 layout_mode = 2
-offset_left = 64.0
-offset_top = 6.0
-offset_right = 192.0
-offset_bottom = 166.0
+anchors_preset = 0
+offset_right = -271.36
+offset_bottom = -186.0
 
 [node name="Upgrade2" parent="Control/MarginContainer/VBoxContainer/HBoxContainer" instance=ExtResource("2_vlgx8")]
 unique_name_in_owner = true
 layout_mode = 2
+anchors_preset = 0
 offset_left = 440.0
 offset_top = 6.0
-offset_right = 568.0
-offset_bottom = 166.0
+offset_right = 168.64
+offset_bottom = -180.0
 
 [node name="Upgrade3" parent="Control/MarginContainer/VBoxContainer/HBoxContainer" instance=ExtResource("2_vlgx8")]
 unique_name_in_owner = true
 layout_mode = 2
+anchors_preset = 0
 offset_left = 816.0
 offset_top = 6.0
-offset_right = 944.0
-offset_bottom = 166.0
+offset_right = 544.64
+offset_bottom = -180.0

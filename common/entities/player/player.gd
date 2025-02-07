@@ -33,13 +33,15 @@ var ranges = Dictionary({
 
 #Call when node enters main scene
 func _ready() -> void:
+	if OS.has_feature("web_android") or OS.has_feature("web_ios"):
+		%MobileControl.show()
 	health = max_health
-	%PlayerCamera/Control_Player/ProgressBar_Health.value = health
+	%ProgressBar_Health.value = health
 	_update_boss_timer()
 
 	$Timer_SB_Counter.start()
 
-	$PlayerCamera/Control_Player/Label_SpawnBoss_Text.visible = false
+	%Label_SpawnBoss_Text.visible = false
 
 	# base weapon
 	var mop = load("res://common/entities/weapons/mop/mop.tscn").instantiate()
@@ -137,7 +139,7 @@ func handleDamage() -> void :
 
 #Update health ui
 func _update_health_ui():
-	%PlayerCamera/Control_Player/ProgressBar_Health.value = health
+	%ProgressBar_Health.value = health
 
 
 #Do hit animation
@@ -168,7 +170,7 @@ func _on_timer_sb_counter_timeout() -> void:
 func _update_boss_timer():
 	var minutes = int(spawn_boss_time / 60)
 	var seconds = int(spawn_boss_time % 60)
-	$PlayerCamera/Control_Player/Label_Timer_Boss.text = str(minutes) + ":" + str(seconds).pad_zeros(2)
+	%Label_Timer_Boss.text = str(minutes) + ":" + str(seconds).pad_zeros(2)
 
 func has_weapon(weapon) -> bool:
 	var children = $Weapons.get_children()

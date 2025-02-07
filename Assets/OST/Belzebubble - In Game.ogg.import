@@ -12,8 +12,8 @@ dest_files=["res://.godot/imported/Belzebubble - In Game.ogg-7836e99ab6c1293bd76
 
 [params]
 
-loop=false
-loop_offset=0
-bpm=0
+loop=true
+loop_offset=0.0
+bpm=0.0
 beat_count=0
 bar_beats=4

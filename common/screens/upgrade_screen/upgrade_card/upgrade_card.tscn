@@ -27,17 +27,20 @@ font = ExtResource("3_ullrn")
 [node name="UpgradeCard" type="Control"]
 custom_minimum_size = Vector2(128, 160)
 layout_mode = 3
-anchors_preset = 0
-offset_right = 400.0
-offset_bottom = 498.0
+anchor_right = 0.312
+anchor_bottom = 0.692
+offset_right = 0.639984
+offset_bottom = -0.240021
 script = ExtResource("1_io4sa")
 
 [node name="CardMain" type="TextureRect" parent="."]
 texture_filter = 1
-layout_mode = 0
+layout_mode = 1
+anchors_preset = -1
+anchor_right = 0.002
 offset_left = 1.0
 offset_top = 22.0
-offset_right = 115.0
+offset_right = 114.2
 offset_bottom = 158.0
 scale = Vector2(3.5, 3.5)
 texture = SubResource("AtlasTexture_fcite")

@@ -545,7 +545,7 @@ _data = {
 [node name="Boss" type="CharacterBody2D" groups=["Hurtbox"]]
 collision_layer = 2
 script = ExtResource("1_ufqce")
-max_health = 50
+max_health = 500
 
 [node name="Shadow" type="Sprite2D" parent="."]
 modulate = Color(1, 1, 1, 0.501961)

@@ -1,10 +1,11 @@
-[gd_scene load_steps=64 format=3 uid="uid://ble8ph76k1ad2"]
+[gd_scene load_steps=65 format=3 uid="uid://ble8ph76k1ad2"]
 
 [ext_resource type="Texture2D" uid="uid://beaipxxxyqqlx" path="res://assets/Belzebubble -Assets/Characters/Eyeden/DASH/dash.png" id="3_wdx5p"]
 [ext_resource type="FontFile" uid="uid://dpv4f3xr1lkt2" path="res://assets/font/Pixuf.ttf" id="6_j7ev7"]
+[ext_resource type="PackedScene" uid="uid://ci4735hqmdjio" path="res://common/screens/mobile_control/mobile_control.tscn" id="7_0tygd"]
 [ext_resource type="Script" path="res://common/entities/player/player.gd" id="8"]
 [ext_resource type="Texture2D" uid="uid://d7p0yxryg777" path="res://assets/shadow.png" id="9"]
-[ext_resource type="PackedScene" uid="uid://n048w5n2316u" path="res://common/entities/weapons/towel_gun/towel_gun.tscn" id="9_51oav"]
+[ext_resource type="PackedScene" uid="uid://bk3uf1q28jt5w" path="res://common/entities/weapons/mop/mop.tscn" id="9_21j7l"]
 [ext_resource type="Texture2D" uid="uid://5eromldfsrvs" path="res://assets/Star.png" id="10"]
 [ext_resource type="Texture2D" uid="uid://xnvtldllwxwp" path="res://assets/Belzebubble -Assets/Characters/Eyeden/IDLE/base_idle.png" id="11_mfl8y"]
 [ext_resource type="Texture2D" uid="uid://c18wfn3usfmr6" path="res://assets/Belzebubble -Assets/Characters/Eyeden/RUN/run.png" id="13_h7vko"]
@@ -488,48 +489,65 @@ zoom = Vector2(0.75, 0.75)
 
 [node name="Control_Player" type="CanvasLayer" parent="PlayerCamera"]
 
-[node name="ProgressBar_Health" type="ProgressBar" parent="PlayerCamera/Control_Player"]
-offset_left = 90.0
-offset_top = 21.0
-offset_right = 390.0
-offset_bottom = 48.0
-rounded = true
-show_percentage = false
+[node name="Label_SpawnBoss_Text" type="Label" parent="PlayerCamera/Control_Player"]
+unique_name_in_owner = true
+modulate = Color(1, 0, 0, 1)
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -576.0
+offset_top = -56.0
+offset_right = 576.0
+offset_bottom = 56.0
+grow_horizontal = 2
+grow_vertical = 2
+pivot_offset = Vector2(634, 58)
+theme_override_colors/font_outline_color = Color(0, 0, 0, 0.498039)
+theme_override_constants/outline_size = 5
+theme_override_fonts/font = ExtResource("6_j7ev7")
+theme_override_font_sizes/font_size = 128
+text = "Calamity approaching"
 
-[node name="Label_HP_Text" type="Label" parent="PlayerCamera/Control_Player"]
-offset_left = 32.0
-offset_top = 29.0
-offset_right = 78.0
-offset_bottom = 52.0
+[node name="MarginContainer" type="MarginContainer" parent="PlayerCamera/Control_Player"]
+anchors_preset = 10
+anchor_right = 1.0
+offset_bottom = 56.0
+grow_horizontal = 2
+theme_override_constants/margin_left = 50
+theme_override_constants/margin_top = 30
+
+[node name="HSplitContainer" type="HSplitContainer" parent="PlayerCamera/Control_Player/MarginContainer"]
+layout_mode = 2
+
+[node name="HBoxContainer" type="HBoxContainer" parent="PlayerCamera/Control_Player/MarginContainer/HSplitContainer"]
+layout_mode = 2
+
+[node name="Label_HP_Text" type="Label" parent="PlayerCamera/Control_Player/MarginContainer/HSplitContainer/HBoxContainer"]
+custom_minimum_size = Vector2(0, 50)
+layout_mode = 2
 theme_override_fonts/font = ExtResource("6_j7ev7")
 text = "Health"
 
-[node name="Label_Timer_Boss" type="Label" parent="PlayerCamera/Control_Player"]
-offset_left = 1124.0
-offset_top = 16.0
-offset_right = 1220.0
-offset_bottom = 72.0
+[node name="ProgressBar_Health" type="ProgressBar" parent="PlayerCamera/Control_Player/MarginContainer/HSplitContainer/HBoxContainer"]
+unique_name_in_owner = true
+custom_minimum_size = Vector2(250, 20)
+layout_mode = 2
+rounded = true
+show_percentage = false
+
+[node name="Label_Timer_Boss" type="Label" parent="PlayerCamera/Control_Player/MarginContainer/HSplitContainer"]
+unique_name_in_owner = true
+layout_mode = 2
 theme_override_fonts/font = ExtResource("6_j7ev7")
 theme_override_font_sizes/font_size = 64
 text = "000
 "
+horizontal_alignment = 2
 
-[node name="Label_SpawnBoss_Text" type="Label" parent="PlayerCamera/Control_Player"]
-modulate = Color(1, 0, 0, 1)
-offset_left = 221.0
-offset_top = 293.0
-offset_right = 390.0
-offset_bottom = 316.0
-scale = Vector2(5, 5)
-theme_override_colors/font_outline_color = Color(0, 0, 0, 0.498039)
-theme_override_constants/outline_size = 5
-text = "Calamity approaching"
-
-[node name="HBoxContainer" type="HBoxContainer" parent="PlayerCamera/Control_Player"]
-offset_left = 88.0
-offset_top = 14.0
-offset_right = 128.0
-offset_bottom = 54.0
+[node name="MobileControl" parent="PlayerCamera" instance=ExtResource("7_0tygd")]
+unique_name_in_owner = true
 
 [node name="SpawnAnimationPlayer" type="AnimationPlayer" parent="."]
 libraries = {
@@ -571,7 +589,7 @@ one_shot = true
 
 [node name="Weapons" type="Node2D" parent="."]
 
-[node name="NailGun" parent="Weapons" instance=ExtResource("9_51oav")]
+[node name="Mop" parent="Weapons" instance=ExtResource("9_21j7l")]
 
 [connection signal="area_entered" from="Hurtbox" to="." method="_on_hurtbox_area_entered"]
 [connection signal="area_exited" from="Hurtbox" to="." method="_on_hurtbox_area_exited"]
